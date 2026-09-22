@@ -2,31 +2,30 @@
     "schema":  1,
     "device":  "esp1-monet",
     "current":  {
-                    "version":  "2.3.0",
+                    "version":  "2.3.1",
                     "published":  "2026-09-22",
-                    "summary":  "Verifica online degli aggiornamenti dalla pagina di configurazione.",
+                    "summary":  "Release di collaudo: nessuna modifica funzionale rispetto alla 2.3.0.",
                     "notes":  [
-                                  "Nuovo tasto \"Verifica ora\" nella sezione Aggiornamento firmware: controlla se esiste una versione più recente e la installa in un passaggio.",
-                                  "Note di release mostrate prima dell\u0027installazione.",
-                                  "Reinstallazione della versione precedente dalla stessa sezione.",
-                                  "Il caricamento manuale di un pacchetto .emu resta disponibile.",
-                                  "Nessuna modifica al firmware: la verifica avviene nel browser, il dispositivo non contatta internet."
+                                  "Serve a verificare sul dispositivo reale il percorso \"versione disponibile → scarica → installa\", che la 2.3.0 non poteva collaudare essendo già la versione pubblicata.",
+                                  "Il contenuto di firmware e interfaccia è identico alla 2.3.0, a parte la stringa di versione."
                               ],
-                    "file":  "firmware/esp1-monet-v2.3.0.emu",
+                    "file":  "firmware/esp1-monet-v2.3.1.emu",
                     "size":  2529160,
-                    "sha256":  "92c366e22e38800e6c035906786925ecec922e1d05fcd29f58e2e910dc677ce5"
+                    "sha256":  "175d2b21330f4f456d4f9900ffa506f0b2f78dc27e153431eec6af0686db7733"
                 },
     "previous":  {
-                     "version":  "2.2.1",
-                     "published":  "2026-09-19",
-                     "summary":  "Tasto di riavvio nella pagina di configurazione e factory reset dal tasto BOOT.",
+                     "version":  "2.3.0",
+                     "published":  "2026-09-22",
+                     "summary":  "Verifica online degli aggiornamenti dalla pagina di configurazione.",
                      "notes":  [
-                                   "Nuovo tasto \"Riavvia\" nella Danger Zone della pagina di configurazione.",
-                                   "Factory reset con pressione lunga di 15 s sul tasto BOOT.",
-                                   "La pagina di configurazione si intitola \"Configurazione ESP1\"."
+                                   "Nuovo tasto \"Verifica ora\" nella sezione Aggiornamento firmware: controlla se esiste una versione più recente e la installa in un passaggio.",
+                                   "Note di release mostrate prima dell\u0027installazione.",
+                                   "Reinstallazione della versione precedente dalla stessa sezione.",
+                                   "Il caricamento manuale di un pacchetto .emu resta disponibile.",
+                                   "Nessuna modifica al firmware: la verifica avviene nel browser, il dispositivo non contatta internet."
                                ],
-                     "file":  "firmware/esp1-monet-v2.2.1.emu",
+                     "file":  "firmware/esp1-monet-v2.3.0.emu",
                      "size":  2529160,
-                     "sha256":  "6ff48327862d321d2fb763d8968573d5a8fabd4c5dd7d00364c165fc129e521c"
+                     "sha256":  "92c366e22e38800e6c035906786925ecec922e1d05fcd29f58e2e910dc677ce5"
                  }
 }
