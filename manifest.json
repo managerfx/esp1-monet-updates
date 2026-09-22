@@ -1,0 +1,17 @@
+{
+    "schema":  1,
+    "device":  "esp1-monet",
+    "current":  {
+                    "version":  "2.2.1",
+                    "published":  "2026-09-19",
+                    "summary":  "Tasto di riavvio nella pagina di configurazione e factory reset dal tasto BOOT.",
+                    "notes":  [
+                                  "Nuovo tasto \"Riavvia\" nella Danger Zone della pagina di configurazione.",
+                                  "Factory reset con pressione lunga di 15 s sul tasto BOOT.",
+                                  "La pagina di configurazione si intitola \"Configurazione ESP1\"."
+                              ],
+                    "file":  "firmware/esp1-monet-v2.2.1.emu",
+                    "size":  2529160,
+                    "sha256":  "6ff48327862d321d2fb763d8968573d5a8fabd4c5dd7d00364c165fc129e521c"
+                }
+}
