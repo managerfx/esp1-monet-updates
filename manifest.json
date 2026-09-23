@@ -2,26 +2,28 @@
     "schema":  1,
     "device":  "esp1-monet",
     "current":  {
-                    "version":  "2.3.2",
-                    "published":  "2026-09-22",
-                    "summary":  "Correzione grafica nella sezione aggiornamento firmware.",
+                    "version":  "2.3.3",
+                    "published":  "2026-09-23",
+                    "summary":  "Correzioni sul gating stagionale del fancoil e rifiniture UI.",
                     "notes":  [
-                                  "La sezione \"Verifica aggiornamenti\" ora riceve correttamente gli stili della pagina di configurazione (card, label, stati disabilitati)."
+                                  "Il comando fancoil (MV:X0001) e\u0027 ora rifiutato via POST /write o MQTT fuori dalla stagione di Raffrescamento, allineando il backend a quanto gia\u0027 mostrato dalle interfacce.",
+                                  "La sezione fancoil dell\u0027area non compare piu\u0027 fuori dalla stagione di Raffrescamento.",
+                                  "Il box del target di temperatura non compare piu\u0027 in Mezza Stagione, al posto di restare visibile e disabilitato.",
+                                  "La tab \"Impostazioni\" del termostato e\u0027 stata rinominata in \"Clima\" per non confondersi con \"Configurazione ESP1\" (menu del gateway)."
                               ],
-                    "file":  "firmware/esp1-monet-v2.3.2.emu",
+                    "file":  "firmware/esp1-monet-v2.3.3.emu",
                     "size":  2529160,
-                    "sha256":  "33554f8b3f20240dbf693e75d92b5f1afe11ff3738be6d41ad450e81543e1108"
+                    "sha256":  "4dd02a05df49f9f1b9315f003711e331aef0873828205f3aaa0498cc596796c4"
                 },
     "previous":  {
-                     "version":  "2.3.1",
+                     "version":  "2.3.2",
                      "published":  "2026-09-22",
-                     "summary":  "Release di collaudo: nessuna modifica funzionale rispetto alla 2.3.0.",
+                     "summary":  "Correzione grafica nella sezione aggiornamento firmware.",
                      "notes":  [
-                                   "Serve a verificare sul dispositivo reale il percorso \"versione disponibile → scarica → installa\", che la 2.3.0 non poteva collaudare essendo già la versione pubblicata.",
-                                   "Il contenuto di firmware e interfaccia è identico alla 2.3.0, a parte la stringa di versione."
+                                   "La sezione \"Verifica aggiornamenti\" ora riceve correttamente gli stili della pagina di configurazione (card, label, stati disabilitati)."
                                ],
-                     "file":  "firmware/esp1-monet-v2.3.1.emu",
+                     "file":  "firmware/esp1-monet-v2.3.2.emu",
                      "size":  2529160,
-                     "sha256":  "175d2b21330f4f456d4f9900ffa506f0b2f78dc27e153431eec6af0686db7733"
+                     "sha256":  "33554f8b3f20240dbf693e75d92b5f1afe11ff3738be6d41ad450e81543e1108"
                  }
 }
