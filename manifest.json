@@ -2,28 +2,32 @@
     "schema":  1,
     "device":  "esp1-monet",
     "current":  {
-                    "version":  "2.3.3",
-                    "published":  "2026-09-23",
-                    "summary":  "Correzioni sul gating stagionale del fancoil e rifiniture UI.",
+                    "version":  "2.3.4",
+                    "published":  "2026-09-24",
+                    "summary":  "Il pannello Debug avanzato mostra l\u0027identità completa degli oggetti BACnet e permette di rileggerne uno alla volta direttamente dal termostato.",
                     "notes":  [
-                                  "Il comando fancoil (MV:X0001) e\u0027 ora rifiutato via POST /write o MQTT fuori dalla stagione di Raffrescamento, allineando il backend a quanto gia\u0027 mostrato dalle interfacce.",
-                                  "La sezione fancoil dell\u0027area non compare piu\u0027 fuori dalla stagione di Raffrescamento.",
-                                  "Il box del target di temperatura non compare piu\u0027 in Mezza Stagione, al posto di restare visibile e disabilitato.",
-                                  "La tab \"Impostazioni\" del termostato e\u0027 stata rinominata in \"Clima\" per non confondersi con \"Configurazione ESP1\" (menu del gateway)."
+                                  "Ogni riga mostra ora il codice e il tipo BACnet accanto al nome (per esempio `AV:20000 · Analog value · A2_StpEffettivo`), utili per correlare un valore con la documentazione del termostato o con una cattura del bus.",
+                                  "Nuovo tasto per riga che rilegge il valore dal termostato invece di mostrare quello memorizzato dal gateway, con l\u0027indicazione di quanto il valore memorizzato si discostava da quello reale.",
+                                  "Campo di ricerca per filtrare i 56 oggetti per nome o per codice.",
+                                  "Le sottoscrizioni COV mostrano anch\u0027esse il codice BACnet.",
+                                  "Il pannello resta accessibile solo quando il gateway è connesso alla rete locale e la diagnostica è abilitata."
                               ],
-                    "file":  "firmware/esp1-monet-v2.3.3.emu",
-                    "size":  2529160,
-                    "sha256":  "4dd02a05df49f9f1b9315f003711e331aef0873828205f3aaa0498cc596796c4"
+                    "file":  "firmware/esp1-monet-v2.3.4.emu",
+                    "size":  2532760,
+                    "sha256":  "82c1b3f428ef246ca6a3a9d382f3937f30c50044e4cb2e7c748ab35baef888cd"
                 },
     "previous":  {
-                     "version":  "2.3.2",
-                     "published":  "2026-09-22",
-                     "summary":  "Correzione grafica nella sezione aggiornamento firmware.",
+                     "version":  "2.3.3",
+                     "published":  "2026-09-23",
+                     "summary":  "Correzioni sul gating stagionale del fancoil e rifiniture UI.",
                      "notes":  [
-                                   "La sezione \"Verifica aggiornamenti\" ora riceve correttamente gli stili della pagina di configurazione (card, label, stati disabilitati)."
+                                   "Il comando fancoil (MV:X0001) e\u0027 ora rifiutato via POST /write o MQTT fuori dalla stagione di Raffrescamento, allineando il backend a quanto gia\u0027 mostrato dalle interfacce.",
+                                   "La sezione fancoil dell\u0027area non compare piu\u0027 fuori dalla stagione di Raffrescamento.",
+                                   "Il box del target di temperatura non compare piu\u0027 in Mezza Stagione, al posto di restare visibile e disabilitato.",
+                                   "La tab \"Impostazioni\" del termostato e\u0027 stata rinominata in \"Clima\" per non confondersi con \"Configurazione ESP1\" (menu del gateway)."
                                ],
-                     "file":  "firmware/esp1-monet-v2.3.2.emu",
+                     "file":  "firmware/esp1-monet-v2.3.3.emu",
                      "size":  2529160,
-                     "sha256":  "33554f8b3f20240dbf693e75d92b5f1afe11ff3738be6d41ad450e81543e1108"
+                     "sha256":  "4dd02a05df49f9f1b9315f003711e331aef0873828205f3aaa0498cc596796c4"
                  }
 }
