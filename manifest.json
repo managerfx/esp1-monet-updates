@@ -2,32 +2,32 @@
     "schema":  1,
     "device":  "esp1-monet",
     "current":  {
-                    "version":  "2.3.4",
-                    "published":  "2026-09-24",
-                    "summary":  "Il pannello Debug avanzato mostra l\u0027identità completa degli oggetti BACnet e permette di rileggerne uno alla volta direttamente dal termostato.",
+                    "version":  "2.4.0",
+                    "published":  "2026-09-28",
+                    "summary":  "Diagnostica delle disconnessioni MQTT: il gateway ora registra perché le entità di Home Assistant diventano temporaneamente non disponibili.",
                     "notes":  [
-                                  "Ogni riga mostra ora il codice e il tipo BACnet accanto al nome (per esempio `AV:20000 · Analog value · A2_StpEffettivo`), utili per correlare un valore con la documentazione del termostato o con una cattura del bus.",
-                                  "Nuovo tasto per riga che rilegge il valore dal termostato invece di mostrare quello memorizzato dal gateway, con l\u0027indicazione di quanto il valore memorizzato si discostava da quello reale.",
-                                  "Campo di ricerca per filtrare i 56 oggetti per nome o per codice.",
-                                  "Le sottoscrizioni COV mostrano anch\u0027esse il codice BACnet.",
-                                  "Il pannello resta accessibile solo quando il gateway è connesso alla rete locale e la diagnostica è abilitata."
+                                  "Nuova entità diagnostica \"Ultimo drop MQTT\": alla riconnessione il gateway pubblica il motivo dell\u0027interruzione appena conclusa, con durata della connessione precedente, eventuale caduta WiFi correlata, memoria libera e potenza del segnale. Lo storico di Home Assistant lo conserva, quindi l\u0027episodio resta consultabile a giorni di distanza e può essere usato come innesco per una notifica.",
+                                  "Registro eventi a bordo del gateway: gli ultimi 32 eventi (avvio con il motivo del riavvio, cadute e ritorni del WiFi, interruzioni e ripristini MQTT, invii falliti, rallentamenti interni) restano in memoria con il loro orario e sopravvivono ai riavvii automatici del gateway, per esempio quello del cambio stagione.",
+                                  "La pagina di diagnostica riporta i contatori delle interruzioni MQTT e WiFi, con il codice di motivo, e i tempi di esecuzione interni utili a distinguere un rallentamento del gateway da un problema di rete.",
+                                  "Questa versione non modifica il comportamento del gateway: serve a identificare la causa delle brevi indisponibilità, non a correggerla. La correzione arriverà quando i dati raccolti indicheranno con certezza l\u0027origine del problema."
                               ],
-                    "file":  "firmware/esp1-monet-v2.3.4.emu",
-                    "size":  2532760,
-                    "sha256":  "82c1b3f428ef246ca6a3a9d382f3937f30c50044e4cb2e7c748ab35baef888cd"
+                    "file":  "firmware/esp1-monet-v2.4.0.emu",
+                    "size":  2536760,
+                    "sha256":  "c363fd166b3133e5be2c7d0d122a41f27b6c85704b733f1f554de5c34b2793ff"
                 },
     "previous":  {
-                     "version":  "2.3.3",
-                     "published":  "2026-09-23",
-                     "summary":  "Correzioni sul gating stagionale del fancoil e rifiniture UI.",
+                     "version":  "2.3.4",
+                     "published":  "2026-09-24",
+                     "summary":  "Il pannello Debug avanzato mostra l\u0027identità completa degli oggetti BACnet e permette di rileggerne uno alla volta direttamente dal termostato.",
                      "notes":  [
-                                   "Il comando fancoil (MV:X0001) e\u0027 ora rifiutato via POST /write o MQTT fuori dalla stagione di Raffrescamento, allineando il backend a quanto gia\u0027 mostrato dalle interfacce.",
-                                   "La sezione fancoil dell\u0027area non compare piu\u0027 fuori dalla stagione di Raffrescamento.",
-                                   "Il box del target di temperatura non compare piu\u0027 in Mezza Stagione, al posto di restare visibile e disabilitato.",
-                                   "La tab \"Impostazioni\" del termostato e\u0027 stata rinominata in \"Clima\" per non confondersi con \"Configurazione ESP1\" (menu del gateway)."
+                                   "Ogni riga mostra ora il codice e il tipo BACnet accanto al nome (per esempio `AV:20000 · Analog value · A2_StpEffettivo`), utili per correlare un valore con la documentazione del termostato o con una cattura del bus.",
+                                   "Nuovo tasto per riga che rilegge il valore dal termostato invece di mostrare quello memorizzato dal gateway, con l\u0027indicazione di quanto il valore memorizzato si discostava da quello reale.",
+                                   "Campo di ricerca per filtrare i 56 oggetti per nome o per codice.",
+                                   "Le sottoscrizioni COV mostrano anch\u0027esse il codice BACnet.",
+                                   "Il pannello resta accessibile solo quando il gateway è connesso alla rete locale e la diagnostica è abilitata."
                                ],
-                     "file":  "firmware/esp1-monet-v2.3.3.emu",
-                     "size":  2529160,
-                     "sha256":  "4dd02a05df49f9f1b9315f003711e331aef0873828205f3aaa0498cc596796c4"
+                     "file":  "firmware/esp1-monet-v2.3.4.emu",
+                     "size":  2532760,
+                     "sha256":  "82c1b3f428ef246ca6a3a9d382f3937f30c50044e4cb2e7c748ab35baef888cd"
                  }
 }
