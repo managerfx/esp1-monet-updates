@@ -2,32 +2,31 @@
     "schema":  1,
     "device":  "esp1-monet",
     "current":  {
-                    "version":  "2.4.0",
+                    "version":  "2.4.1",
                     "published":  "2026-09-28",
-                    "summary":  "Diagnostica delle disconnessioni MQTT: il gateway ora registra perché le entità di Home Assistant diventano temporaneamente non disponibili.",
+                    "summary":  "Riduce le brevi indisponibilità delle entità in Home Assistant e corregge la segnalazione di stato durante i riavvii.",
                     "notes":  [
-                                  "Nuova entità diagnostica \"Ultimo drop MQTT\": alla riconnessione il gateway pubblica il motivo dell\u0027interruzione appena conclusa, con durata della connessione precedente, eventuale caduta WiFi correlata, memoria libera e potenza del segnale. Lo storico di Home Assistant lo conserva, quindi l\u0027episodio resta consultabile a giorni di distanza e può essere usato come innesco per una notifica.",
-                                  "Registro eventi a bordo del gateway: gli ultimi 32 eventi (avvio con il motivo del riavvio, cadute e ritorni del WiFi, interruzioni e ripristini MQTT, invii falliti, rallentamenti interni) restano in memoria con il loro orario e sopravvivono ai riavvii automatici del gateway, per esempio quello del cambio stagione.",
-                                  "La pagina di diagnostica riporta i contatori delle interruzioni MQTT e WiFi, con il codice di motivo, e i tempi di esecuzione interni utili a distinguere un rallentamento del gateway da un problema di rete.",
-                                  "Questa versione non modifica il comportamento del gateway: serve a identificare la causa delle brevi indisponibilità, non a correggerla. La correzione arriverà quando i dati raccolti indicheranno con certezza l\u0027origine del problema."
+                                  "Il gateway ora concede al server di posta MQTT molto più tempo prima di considerare interrotta la connessione: un rallentamento momentaneo o un messaggio di controllo perso non fanno più cadere il collegamento, che era la causa immediata delle entità che diventavano non disponibili per qualche secondo.",
+                                  "Nuovo controllo periodico del collegamento: ogni 30 secondi il gateway verifica che i messaggi arrivino davvero a destinazione e non solo che siano stati spediti. Se il collegamento è muto se ne accorge in 10 secondi e lo registra, invece di scoprirlo quando la connessione è già caduta.",
+                                  "Prima di ogni riavvio il gateway avverte Home Assistant che sta per rendersi non disponibile. Finora non lo faceva: durante l\u0027avvio le entità risultavano ancora disponibili, e Home Assistant mostrava per una ventina di secondi valori di un dispositivo che in realtà non stava rispondendo.",
+                                  "Nota sulla causa di fondo: questa versione rende il collegamento molto più tollerante, ma l\u0027origine precisa del rallentamento è ancora sotto osservazione. Gli strumenti introdotti con la 2.4.0, insieme al nuovo controllo periodico, continuano a raccogliere i dati necessari."
                               ],
-                    "file":  "firmware/esp1-monet-v2.4.0.emu",
-                    "size":  2536760,
-                    "sha256":  "c363fd166b3133e5be2c7d0d122a41f27b6c85704b733f1f554de5c34b2793ff"
+                    "file":  "firmware/esp1-monet-v2.4.1.emu",
+                    "size":  2538024,
+                    "sha256":  "2dffd51447dbf68e4f07bea5e53e87aa8c9412dcd3555b3e08e94955e853f3da"
                 },
     "previous":  {
-                     "version":  "2.3.4",
-                     "published":  "2026-09-24",
-                     "summary":  "Il pannello Debug avanzato mostra l\u0027identità completa degli oggetti BACnet e permette di rileggerne uno alla volta direttamente dal termostato.",
+                     "version":  "2.4.0",
+                     "published":  "2026-09-28",
+                     "summary":  "Diagnostica delle disconnessioni MQTT: il gateway ora registra perché le entità di Home Assistant diventano temporaneamente non disponibili.",
                      "notes":  [
-                                   "Ogni riga mostra ora il codice e il tipo BACnet accanto al nome (per esempio `AV:20000 · Analog value · A2_StpEffettivo`), utili per correlare un valore con la documentazione del termostato o con una cattura del bus.",
-                                   "Nuovo tasto per riga che rilegge il valore dal termostato invece di mostrare quello memorizzato dal gateway, con l\u0027indicazione di quanto il valore memorizzato si discostava da quello reale.",
-                                   "Campo di ricerca per filtrare i 56 oggetti per nome o per codice.",
-                                   "Le sottoscrizioni COV mostrano anch\u0027esse il codice BACnet.",
-                                   "Il pannello resta accessibile solo quando il gateway è connesso alla rete locale e la diagnostica è abilitata."
+                                   "Nuova entità diagnostica \"Ultimo drop MQTT\": alla riconnessione il gateway pubblica il motivo dell\u0027interruzione appena conclusa, con durata della connessione precedente, eventuale caduta WiFi correlata, memoria libera e potenza del segnale. Lo storico di Home Assistant lo conserva, quindi l\u0027episodio resta consultabile a giorni di distanza e può essere usato come innesco per una notifica.",
+                                   "Registro eventi a bordo del gateway: gli ultimi 32 eventi (avvio con il motivo del riavvio, cadute e ritorni del WiFi, interruzioni e ripristini MQTT, invii falliti, rallentamenti interni) restano in memoria con il loro orario e sopravvivono ai riavvii automatici del gateway, per esempio quello del cambio stagione.",
+                                   "La pagina di diagnostica riporta i contatori delle interruzioni MQTT e WiFi, con il codice di motivo, e i tempi di esecuzione interni utili a distinguere un rallentamento del gateway da un problema di rete.",
+                                   "Questa versione non modifica il comportamento del gateway: serve a identificare la causa delle brevi indisponibilità, non a correggerla. La correzione arriverà quando i dati raccolti indicheranno con certezza l\u0027origine del problema."
                                ],
-                     "file":  "firmware/esp1-monet-v2.3.4.emu",
-                     "size":  2532760,
-                     "sha256":  "82c1b3f428ef246ca6a3a9d382f3937f30c50044e4cb2e7c748ab35baef888cd"
+                     "file":  "firmware/esp1-monet-v2.4.0.emu",
+                     "size":  2536760,
+                     "sha256":  "c363fd166b3133e5be2c7d0d122a41f27b6c85704b733f1f554de5c34b2793ff"
                  }
 }
