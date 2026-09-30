@@ -2,30 +2,28 @@
     "schema":  1,
     "device":  "esp1-monet",
     "current":  {
-                    "version":  "2.5.0",
+                    "version":  "2.5.1",
                     "published":  "2026-09-30",
-                    "summary":  "Il gateway si può riavviare direttamente da Home Assistant, e il registro eventi indica chi ha chiesto ogni riavvio.",
+                    "summary":  "Rende consultabile il registro eventi del gateway, necessario per analizzare un blocco in modalità di configurazione dopo una perdita del WiFi.",
                     "notes":  [
-                                  "Nuovo pulsante \"Riavvia\" nella sezione Diagnostica del dispositivo in Home Assistant. Il riavvio segue la stessa strada di quello dalla pagina di configurazione: avverte Home Assistant prima di spegnersi e viene rimandato se è in corso un aggiornamento. Il pulsante appare disabilitato quando il gateway non è raggiungibile.",
-                                  "Il registro eventi del gateway annota ora l\u0027origine di ogni riavvio volontario: pagina web, Home Assistant, ripristino di fabbrica, rete WiFi assente troppo a lungo, aggiornamento completato o cambio di stagione. Finora tutti questi riavvii risultavano identici.",
-                                  "Cambiando il nome del dispositivo MQTT, le entità diagnostiche vengono ora rimosse correttamente da Home Assistant invece di restare come duplicati non disponibili."
+                                  "Il registro degli ultimi eventi del gateway (avvii, cadute e ritorni del WiFi e di MQTT, riavvii con la loro origine) non era leggibile: la richiesta restituiva la diagnostica generale al posto degli eventi. Ora risponde correttamente.",
+                                  "Questa versione non modifica ancora il comportamento del WiFi: serve a raccogliere i dati su un episodio in cui il gateway, dopo un\u0027interruzione della rete, è rimasto per ore nella modalità di configurazione invece di tornare al funzionamento normale. La correzione arriverà con una versione successiva, basata su quei dati."
                               ],
-                    "file":  "firmware/esp1-monet-v2.5.0.emu",
+                    "file":  "firmware/esp1-monet-v2.5.1.emu",
                     "size":  2538840,
-                    "sha256":  "b8765e69d679aa94ef0e448396e35d9308c0c54ce22bde68f654326e8702588d"
+                    "sha256":  "ead371af6d7e02f1f0e9a2d26cc890db5d177142b32f13eec4b96539fff6503a"
                 },
     "previous":  {
-                     "version":  "2.4.1",
-                     "published":  "2026-09-28",
-                     "summary":  "Riduce le brevi indisponibilità delle entità in Home Assistant e corregge la segnalazione di stato durante i riavvii.",
+                     "version":  "2.5.0",
+                     "published":  "2026-09-30",
+                     "summary":  "Il gateway si può riavviare direttamente da Home Assistant, e il registro eventi indica chi ha chiesto ogni riavvio.",
                      "notes":  [
-                                   "Il gateway ora concede al server di posta MQTT molto più tempo prima di considerare interrotta la connessione: un rallentamento momentaneo o un messaggio di controllo perso non fanno più cadere il collegamento, che era la causa immediata delle entità che diventavano non disponibili per qualche secondo.",
-                                   "Nuovo controllo periodico del collegamento: ogni 30 secondi il gateway verifica che i messaggi arrivino davvero a destinazione e non solo che siano stati spediti. Se il collegamento è muto se ne accorge in 10 secondi e lo registra, invece di scoprirlo quando la connessione è già caduta.",
-                                   "Prima di ogni riavvio il gateway avverte Home Assistant che sta per rendersi non disponibile. Finora non lo faceva: durante l\u0027avvio le entità risultavano ancora disponibili, e Home Assistant mostrava per una ventina di secondi valori di un dispositivo che in realtà non stava rispondendo.",
-                                   "Nota sulla causa di fondo: questa versione rende il collegamento molto più tollerante, ma l\u0027origine precisa del rallentamento è ancora sotto osservazione. Gli strumenti introdotti con la 2.4.0, insieme al nuovo controllo periodico, continuano a raccogliere i dati necessari."
+                                   "Nuovo pulsante \"Riavvia\" nella sezione Diagnostica del dispositivo in Home Assistant. Il riavvio segue la stessa strada di quello dalla pagina di configurazione: avverte Home Assistant prima di spegnersi e viene rimandato se è in corso un aggiornamento. Il pulsante appare disabilitato quando il gateway non è raggiungibile.",
+                                   "Il registro eventi del gateway annota ora l\u0027origine di ogni riavvio volontario: pagina web, Home Assistant, ripristino di fabbrica, rete WiFi assente troppo a lungo, aggiornamento completato o cambio di stagione. Finora tutti questi riavvii risultavano identici.",
+                                   "Cambiando il nome del dispositivo MQTT, le entità diagnostiche vengono ora rimosse correttamente da Home Assistant invece di restare come duplicati non disponibili."
                                ],
-                     "file":  "firmware/esp1-monet-v2.4.1.emu",
-                     "size":  2538024,
-                     "sha256":  "2dffd51447dbf68e4f07bea5e53e87aa8c9412dcd3555b3e08e94955e853f3da"
+                     "file":  "firmware/esp1-monet-v2.5.0.emu",
+                     "size":  2538840,
+                     "sha256":  "b8765e69d679aa94ef0e448396e35d9308c0c54ce22bde68f654326e8702588d"
                  }
 }
