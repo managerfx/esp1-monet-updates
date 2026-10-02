@@ -2,29 +2,30 @@
     "schema":  1,
     "device":  "esp1-monet",
     "current":  {
-                    "version":  "2.5.2",
-                    "published":  "2026-09-30",
-                    "summary":  "Il gateway non resta più bloccato nella modalità di configurazione dopo un\u0027interruzione del WiFi.",
+                    "version":  "2.5.3",
+                    "published":  "2026-10-02",
+                    "summary":  "Il gateway si ricollega da solo quando il WiFi risulta connesso ma non passa più traffico.",
                     "notes":  [
-                                  "Se all\u0027avvio il gateway non riesce a collegarsi alla rete di casa, per esempio per disturbi sul WiFi, entra nella modalità di configurazione. Finora poteva restarci per ore, anche dopo il ritorno della rete, e tornava al funzionamento normale solo con un riavvio manuale. Ora, se entro 30 minuti nessuno si collega alla sua rete di configurazione, il gateway si riavvia da solo e riprova la rete di casa, e continua a farlo finché non si ricollega.",
-                                  "Il riavvio automatico non interviene durante una configurazione in corso, né su un gateway mai configurato, dove la modalità di configurazione è necessaria.",
-                                  "Il registro eventi del gateway conserva molta più storia: un\u0027interruzione del WiFi occupa ora due righe, con il numero di tentativi falliti, invece di riempire il registro con decine di righe uguali. Anche una lunga serie di riavvii automatici viene riassunta in una sola riga. La capacità è raddoppiata a 64 eventi; il registro riparte vuoto al primo avvio di questa versione.",
-                                  "Il registro annota anche perché il gateway è entrato nella modalità di configurazione, per capire con certezza la causa di un eventuale nuovo episodio."
+                                  "A volte il collegamento WiFi si blocca senza cadere: il gateway risulta connesso alla rete, ma i dati non passano e Home Assistant lo vede non disponibile. Finora restava così finché il router non lo disconnetteva, anche per diversi minuti. Ora, se la connessione con Home Assistant manca da 90 secondi mentre il WiFi risulta attivo, il gateway rifà da sé il collegamento alla rete.",
+                                  "Se Home Assistant è davvero spento o in riavvio, il gateway non insiste: dopo il primo tentativo ne fa al massimo uno ogni 10 minuti, finché la connessione non torna. Il controllo termostato non è mai interessato.",
+                                  "Il registro eventi annota ogni ricollegamento forzato e, a ogni collegamento alla rete, a quale apparato WiFi (router o ripetitore) e su quale canale si è agganciato il gateway, per capire dove cercare la causa di una caduta."
                               ],
-                    "file":  "firmware/esp1-monet-v2.5.2.emu",
-                    "size":  2540104,
-                    "sha256":  "2838ab67c1b47d2be037dd4c55026d249465d25eeda08b13e9c5050d75ea56f1"
+                    "file":  "firmware/esp1-monet-v2.5.3.emu",
+                    "size":  2541256,
+                    "sha256":  "779423e1b868bdb7c9cd6dbc0f5810c0cc34e2bae9ffd0ab92dd3939b806d29b"
                 },
     "previous":  {
-                     "version":  "2.5.1",
+                     "version":  "2.5.2",
                      "published":  "2026-09-30",
-                     "summary":  "Rende consultabile il registro eventi del gateway, necessario per analizzare un blocco in modalità di configurazione dopo una perdita del WiFi.",
+                     "summary":  "Il gateway non resta più bloccato nella modalità di configurazione dopo un\u0027interruzione del WiFi.",
                      "notes":  [
-                                   "Il registro degli ultimi eventi del gateway (avvii, cadute e ritorni del WiFi e di MQTT, riavvii con la loro origine) non era leggibile: la richiesta restituiva la diagnostica generale al posto degli eventi. Ora risponde correttamente.",
-                                   "Questa versione non modifica ancora il comportamento del WiFi: serve a raccogliere i dati su un episodio in cui il gateway, dopo un\u0027interruzione della rete, è rimasto per ore nella modalità di configurazione invece di tornare al funzionamento normale. La correzione arriverà con una versione successiva, basata su quei dati."
+                                   "Se all\u0027avvio il gateway non riesce a collegarsi alla rete di casa, per esempio per disturbi sul WiFi, entra nella modalità di configurazione. Finora poteva restarci per ore, anche dopo il ritorno della rete, e tornava al funzionamento normale solo con un riavvio manuale. Ora, se entro 30 minuti nessuno si collega alla sua rete di configurazione, il gateway si riavvia da solo e riprova la rete di casa, e continua a farlo finché non si ricollega.",
+                                   "Il riavvio automatico non interviene durante una configurazione in corso, né su un gateway mai configurato, dove la modalità di configurazione è necessaria.",
+                                   "Il registro eventi del gateway conserva molta più storia: un\u0027interruzione del WiFi occupa ora due righe, con il numero di tentativi falliti, invece di riempire il registro con decine di righe uguali. Anche una lunga serie di riavvii automatici viene riassunta in una sola riga. La capacità è raddoppiata a 64 eventi; il registro riparte vuoto al primo avvio di questa versione.",
+                                   "Il registro annota anche perché il gateway è entrato nella modalità di configurazione, per capire con certezza la causa di un eventuale nuovo episodio."
                                ],
-                     "file":  "firmware/esp1-monet-v2.5.1.emu",
-                     "size":  2538840,
-                     "sha256":  "ead371af6d7e02f1f0e9a2d26cc890db5d177142b32f13eec4b96539fff6503a"
+                     "file":  "firmware/esp1-monet-v2.5.2.emu",
+                     "size":  2540104,
+                     "sha256":  "2838ab67c1b47d2be037dd4c55026d249465d25eeda08b13e9c5050d75ea56f1"
                  }
 }
