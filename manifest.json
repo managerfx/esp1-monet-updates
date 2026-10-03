@@ -2,30 +2,33 @@
     "schema":  1,
     "device":  "esp1-monet",
     "current":  {
-                    "version":  "2.5.3",
-                    "published":  "2026-10-02",
-                    "summary":  "Il gateway si ricollega da solo quando il WiFi risulta connesso ma non passa più traffico.",
+                    "version":  "2.5.4",
+                    "published":  "2026-10-03",
+                    "summary":  "BETA: recupero MQTT progressivo dopo un\u0027interruzione di rete, con controllo della disponibilita Home Assistant e conservazione degli aggiornamenti pendenti. Versione di prova: prima verifica sul dispositivo positiva, qualificazione hardware e stabilita prolungata ancora da completare.",
                     "notes":  [
-                                  "A volte il collegamento WiFi si blocca senza cadere: il gateway risulta connesso alla rete, ma i dati non passano e Home Assistant lo vede non disponibile. Finora restava così finché il router non lo disconnetteva, anche per diversi minuti. Ora, se la connessione con Home Assistant manca da 90 secondi mentre il WiFi risulta attivo, il gateway rifà da sé il collegamento alla rete.",
-                                  "Se Home Assistant è davvero spento o in riavvio, il gateway non insiste: dopo il primo tentativo ne fa al massimo uno ogni 10 minuti, finché la connessione non torna. Il controllo termostato non è mai interessato.",
-                                  "Il registro eventi annota ogni ricollegamento forzato e, a ogni collegamento alla rete, a quale apparato WiFi (router o ripetitore) e su quale canale si è agganciato il gateway, per capire dove cercare la causa di una caduta."
+                                  "Questo aggiornamento e\u0027 una beta proposta sul canale comune, senza un filtro per i dispositivi di prova. I test automatici e una prima prova dopo cambi canale WiFi sono passati; restano da verificare stabilita per 24-48 ore, rete a segnale debole e disponibilita effettiva delle entita in Home Assistant.",
+                                  "L\u0027inizializzazione MQTT procede per passi, con al massimo un pacchetto applicativo per giro del task rete. Il primo invio fallito interrompe la sessione senza continuare la raffica di pubblicazioni.",
+                                  "Le scritture TCP hanno un budget complessivo di 250 ms, il tentativo TCP usa un timeout di 1500 ms e la lettura ha un budget condiviso. La risoluzione dei nomi del broker viene avviata senza attendere nel task rete. Questi limiti devono ancora essere misurati sul dispositivo nelle condizioni di guasto.",
+                                  "I tentativi di recupero sono distanziati progressivamente da 5 a 60 secondi. Il ritardo riparte dal minimo soltanto dopo 60 secondi consecutivi di servizio operativo.",
+                                  "Home Assistant riceve online soltanto dopo inizializzazione, sincronizzazione dei valori ed eco MQTT confermata. Anche le tre entita climate dipendono dalla disponibilita globale, oltre a quella della propria area. Le identita e i topic restano invariati.",
+                                  "Un invio fallito non cancella il dato da pubblicare. Un aggiornamento BACnet arrivato durante l\u0027invio resta pendente grazie a una revisione separata per ogni oggetto.",
+                                  "Il verbale del guasto conserva le misure raccolte alla caduta, anche se il recupero fallisce di nuovo prima della pubblicazione. La diagnostica distingue connessione MQTT e servizio pronto; il watchdog WiFi considera quest\u0027ultimo. Un\u0027eco persa a servizio gia pronto resta soltanto diagnostica, come prima."
                               ],
-                    "file":  "firmware/esp1-monet-v2.5.3.emu",
-                    "size":  2541256,
-                    "sha256":  "779423e1b868bdb7c9cd6dbc0f5810c0cc34e2bae9ffd0ab92dd3939b806d29b"
+                    "file":  "firmware/esp1-monet-v2.5.4.emu",
+                    "size":  2544632,
+                    "sha256":  "bf871b08d0aca8b8fa1bbb7560d2e41d191690a068fa2c0d9d9d92272d7e1688"
                 },
     "previous":  {
-                     "version":  "2.5.2",
-                     "published":  "2026-09-30",
-                     "summary":  "Il gateway non resta più bloccato nella modalità di configurazione dopo un\u0027interruzione del WiFi.",
+                     "version":  "2.5.3",
+                     "published":  "2026-10-02",
+                     "summary":  "Il gateway si ricollega da solo quando il WiFi risulta connesso ma non passa più traffico.",
                      "notes":  [
-                                   "Se all\u0027avvio il gateway non riesce a collegarsi alla rete di casa, per esempio per disturbi sul WiFi, entra nella modalità di configurazione. Finora poteva restarci per ore, anche dopo il ritorno della rete, e tornava al funzionamento normale solo con un riavvio manuale. Ora, se entro 30 minuti nessuno si collega alla sua rete di configurazione, il gateway si riavvia da solo e riprova la rete di casa, e continua a farlo finché non si ricollega.",
-                                   "Il riavvio automatico non interviene durante una configurazione in corso, né su un gateway mai configurato, dove la modalità di configurazione è necessaria.",
-                                   "Il registro eventi del gateway conserva molta più storia: un\u0027interruzione del WiFi occupa ora due righe, con il numero di tentativi falliti, invece di riempire il registro con decine di righe uguali. Anche una lunga serie di riavvii automatici viene riassunta in una sola riga. La capacità è raddoppiata a 64 eventi; il registro riparte vuoto al primo avvio di questa versione.",
-                                   "Il registro annota anche perché il gateway è entrato nella modalità di configurazione, per capire con certezza la causa di un eventuale nuovo episodio."
+                                   "A volte il collegamento WiFi si blocca senza cadere: il gateway risulta connesso alla rete, ma i dati non passano e Home Assistant lo vede non disponibile. Finora restava così finché il router non lo disconnetteva, anche per diversi minuti. Ora, se la connessione con Home Assistant manca da 90 secondi mentre il WiFi risulta attivo, il gateway rifà da sé il collegamento alla rete.",
+                                   "Se Home Assistant è davvero spento o in riavvio, il gateway non insiste: dopo il primo tentativo ne fa al massimo uno ogni 10 minuti, finché la connessione non torna. Il controllo termostato non è mai interessato.",
+                                   "Il registro eventi annota ogni ricollegamento forzato e, a ogni collegamento alla rete, a quale apparato WiFi (router o ripetitore) e su quale canale si è agganciato il gateway, per capire dove cercare la causa di una caduta."
                                ],
-                     "file":  "firmware/esp1-monet-v2.5.2.emu",
-                     "size":  2540104,
-                     "sha256":  "2838ab67c1b47d2be037dd4c55026d249465d25eeda08b13e9c5050d75ea56f1"
+                     "file":  "firmware/esp1-monet-v2.5.3.emu",
+                     "size":  2541256,
+                     "sha256":  "779423e1b868bdb7c9cd6dbc0f5810c0cc34e2bae9ffd0ab92dd3939b806d29b"
                  }
 }
