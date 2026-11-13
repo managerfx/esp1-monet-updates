@@ -1,36 +1,33 @@
 {
-    "schema":  1,
-    "device":  "esp1-monet",
-    "current":  {
-                    "version":  "2.6.0",
-                    "published":  "2026-10-25",
-                    "summary":  "BETA: aggiornamento della programmazione settimanale dal termostato, con errori di lettura visibili e protezione dei dati precedenti. Verifiche automatiche locali completate; prova sul dispositivo ancora da eseguire.",
-                    "notes":  [
-                                  "La sezione Programmazione settimanale rilegge i dati all\u0027apertura. Il nuovo pulsante Aggiorna richiede una lettura dal termostato e mostra l\u0027orario dell\u0027ultima lettura riuscita.",
-                                  "Gli errori BACnet non vengono piu convertiti in fasce disabilitate. La settimana viene pubblicata solo dopo aver letto e validato tutti i 28 orari; in caso di errore restano conservati gli ultimi dati validi.",
-                                  "Letture e scritture hanno tentativi e tempi di attesa limitati. Un guasto non lascia la programmazione impegnata indefinitamente; gli errori di lettura indicano l\u0027oggetto BACnet coinvolto, quando disponibile.",
-                                  "Durante le operazioni i comandi sono disabilitati. Aggiornare con modifiche non salvate richiede conferma; dopo un errore serve una lettura riuscita prima di poter salvare nuovamente.",
-                                  "Il salvataggio risulta completato solo dopo la rilettura dal termostato. La correzione richiede firmware e interfaccia inclusi in questo pacchetto; il comportamento sul bus reale resta da verificare con dispositivo collegato."
-                              ],
-                    "file":  "firmware/esp1-monet-v2.6.0.emu",
-                    "size":  2546136,
-                    "sha256":  "d16019723ee8ce801ea77d44434ff2ea835f424a38d5df7de46d37876507388b"
-                },
-    "previous":  {
-                     "version":  "2.5.4",
-                     "published":  "2026-10-03",
-                     "summary":  "BETA: recupero MQTT progressivo dopo un\u0027interruzione di rete, con controllo della disponibilita Home Assistant e conservazione degli aggiornamenti pendenti. Versione di prova: prima verifica sul dispositivo positiva, qualificazione hardware e stabilita prolungata ancora da completare.",
-                     "notes":  [
-                                   "Questo aggiornamento e\u0027 una beta proposta sul canale comune, senza un filtro per i dispositivi di prova. I test automatici e una prima prova dopo cambi canale WiFi sono passati; restano da verificare stabilita per 24-48 ore, rete a segnale debole e disponibilita effettiva delle entita in Home Assistant.",
-                                   "L\u0027inizializzazione MQTT procede per passi, con al massimo un pacchetto applicativo per giro del task rete. Il primo invio fallito interrompe la sessione senza continuare la raffica di pubblicazioni.",
-                                   "Le scritture TCP hanno un budget complessivo di 250 ms, il tentativo TCP usa un timeout di 1500 ms e la lettura ha un budget condiviso. La risoluzione dei nomi del broker viene avviata senza attendere nel task rete. Questi limiti devono ancora essere misurati sul dispositivo nelle condizioni di guasto.",
-                                   "I tentativi di recupero sono distanziati progressivamente da 5 a 60 secondi. Il ritardo riparte dal minimo soltanto dopo 60 secondi consecutivi di servizio operativo.",
-                                   "Home Assistant riceve online soltanto dopo inizializzazione, sincronizzazione dei valori ed eco MQTT confermata. Anche le tre entita climate dipendono dalla disponibilita globale, oltre a quella della propria area. Le identita e i topic restano invariati.",
-                                   "Un invio fallito non cancella il dato da pubblicare. Un aggiornamento BACnet arrivato durante l\u0027invio resta pendente grazie a una revisione separata per ogni oggetto.",
-                                   "Il verbale del guasto conserva le misure raccolte alla caduta, anche se il recupero fallisce di nuovo prima della pubblicazione. La diagnostica distingue connessione MQTT e servizio pronto; il watchdog WiFi considera quest\u0027ultimo. Un\u0027eco persa a servizio gia pronto resta soltanto diagnostica, come prima."
-                               ],
-                     "file":  "firmware/esp1-monet-v2.5.4.emu",
-                     "size":  2544632,
-                     "sha256":  "bf871b08d0aca8b8fa1bbb7560d2e41d191690a068fa2c0d9d9d92272d7e1688"
-                 }
+  "schema": 1,
+  "device": "esp1-monet",
+  "current": {
+    "version": "2.6.1",
+    "published": "2026-11-13",
+    "summary": "BETA: indicazione Riscalda coerente per singola area nella web UI e in Home Assistant. Mantiene le funzionalita della programmazione settimanale introdotte nella 2.6.0; verifiche automatiche completate, prova sul dispositivo non eseguita.",
+    "notes": [
+      "In riscaldamento, ogni area abilitata mostra Riscalda quando la temperatura e' almeno 0,4 gradi sotto il proprio target effettivo, includendo la soglia esatta. La richiesta globale di calore non accende piu la chip su tutte le aree della web UI.",
+      "Home Assistant riceve la stessa soglia per area tramite hvac_action pubblicata dal firmware. Non serve aggiornare separatamente la card Lovelace.",
+      "Restano presenti il refresh della programmazione settimanale, la validazione dei 28 orari, la gestione degli errori e dei timeout e la conferma del salvataggio tramite rilettura della 2.6.0.",
+      "La piattaforma di compilazione ESP32 e' fissata alla 6.12.0, con Arduino-ESP32 2.0.17 ed ESP-IDF 4.4.7, per evitare aggiornamenti impliciti del framework durante il build. Questa versione e' verificata con test automatici e compilazione, senza prova hardware."
+    ],
+    "file": "firmware/esp1-monet-v2.6.1.emu",
+    "size": 2546328,
+    "sha256": "b520af3a20bcdca0301dbd96100e4d5d3347b859dca9c140e400810bc77eeb02"
+  },
+  "previous": {
+    "version": "2.6.0",
+    "published": "2026-10-25",
+    "summary": "BETA: aggiornamento della programmazione settimanale dal termostato, con errori di lettura visibili e protezione dei dati precedenti. Verifiche automatiche locali completate; prova sul dispositivo ancora da eseguire.",
+    "notes": [
+      "La sezione Programmazione settimanale rilegge i dati all'apertura. Il nuovo pulsante Aggiorna richiede una lettura dal termostato e mostra l'orario dell'ultima lettura riuscita.",
+      "Gli errori BACnet non vengono piu convertiti in fasce disabilitate. La settimana viene pubblicata solo dopo aver letto e validato tutti i 28 orari; in caso di errore restano conservati gli ultimi dati validi.",
+      "Letture e scritture hanno tentativi e tempi di attesa limitati. Un guasto non lascia la programmazione impegnata indefinitamente; gli errori di lettura indicano l'oggetto BACnet coinvolto, quando disponibile.",
+      "Durante le operazioni i comandi sono disabilitati. Aggiornare con modifiche non salvate richiede conferma; dopo un errore serve una lettura riuscita prima di poter salvare nuovamente.",
+      "Il salvataggio risulta completato solo dopo la rilettura dal termostato. La correzione richiede firmware e interfaccia inclusi in questo pacchetto; il comportamento sul bus reale resta da verificare con dispositivo collegato."
+    ],
+    "file": "firmware/esp1-monet-v2.6.0.emu",
+    "size": 2546136,
+    "sha256": "d16019723ee8ce801ea77d44434ff2ea835f424a38d5df7de46d37876507388b"
+  }
 }
