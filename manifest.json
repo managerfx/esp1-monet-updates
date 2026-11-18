@@ -2,6 +2,19 @@
   "schema": 1,
   "device": "esp1-monet",
   "current": {
+    "version": "2.6.2",
+    "published": "2026-11-18",
+    "summary": "BETA: soglia della chip Riscalda aumentata a 0,5 gradi per singola area, coerente tra web UI e Home Assistant. Verifiche automatiche eseguite; prova sul dispositivo non eseguita.",
+    "notes": [
+      "In riscaldamento, ogni area abilitata mostra Riscalda quando la temperatura e' almeno 0,5 gradi sotto il proprio target effettivo, includendo la soglia esatta. Con target 20 gradi, la chip compare da 19,5 gradi in giu e non compare a 19,6 gradi.",
+      "Home Assistant riceve la stessa soglia tramite hvac_action del firmware; non serve aggiornare separatamente la card Lovelace. La modifica riguarda soltanto l'indicazione di stato, non la regolazione del termostato.",
+      "Restano invariate le funzionalita della programmazione settimanale e del recupero MQTT delle versioni precedenti."
+    ],
+    "file": "firmware/esp1-monet-v2.6.2.emu",
+    "size": 2546328,
+    "sha256": "c43ac593293e22925976d0c53ae08ced95c9fc58c19a622ab5d4d116a96486ee"
+  },
+  "previous": {
     "version": "2.6.1",
     "published": "2026-11-13",
     "summary": "BETA: indicazione Riscalda coerente per singola area nella web UI e in Home Assistant. Mantiene le funzionalita della programmazione settimanale introdotte nella 2.6.0; verifiche automatiche completate, prova sul dispositivo non eseguita.",
@@ -14,20 +27,5 @@
     "file": "firmware/esp1-monet-v2.6.1.emu",
     "size": 2546328,
     "sha256": "b520af3a20bcdca0301dbd96100e4d5d3347b859dca9c140e400810bc77eeb02"
-  },
-  "previous": {
-    "version": "2.6.0",
-    "published": "2026-10-25",
-    "summary": "BETA: aggiornamento della programmazione settimanale dal termostato, con errori di lettura visibili e protezione dei dati precedenti. Verifiche automatiche locali completate; prova sul dispositivo ancora da eseguire.",
-    "notes": [
-      "La sezione Programmazione settimanale rilegge i dati all'apertura. Il nuovo pulsante Aggiorna richiede una lettura dal termostato e mostra l'orario dell'ultima lettura riuscita.",
-      "Gli errori BACnet non vengono piu convertiti in fasce disabilitate. La settimana viene pubblicata solo dopo aver letto e validato tutti i 28 orari; in caso di errore restano conservati gli ultimi dati validi.",
-      "Letture e scritture hanno tentativi e tempi di attesa limitati. Un guasto non lascia la programmazione impegnata indefinitamente; gli errori di lettura indicano l'oggetto BACnet coinvolto, quando disponibile.",
-      "Durante le operazioni i comandi sono disabilitati. Aggiornare con modifiche non salvate richiede conferma; dopo un errore serve una lettura riuscita prima di poter salvare nuovamente.",
-      "Il salvataggio risulta completato solo dopo la rilettura dal termostato. La correzione richiede firmware e interfaccia inclusi in questo pacchetto; il comportamento sul bus reale resta da verificare con dispositivo collegato."
-    ],
-    "file": "firmware/esp1-monet-v2.6.0.emu",
-    "size": 2546136,
-    "sha256": "d16019723ee8ce801ea77d44434ff2ea835f424a38d5df7de46d37876507388b"
   }
 }
