@@ -2,33 +2,36 @@
     "schema":  1,
     "device":  "esp1-monet",
     "current":  {
-                    "version":  "2.7.1",
+                    "version":  "2.8.0",
                     "published":  "2026-11-23",
-                    "summary":  "Prima release ufficiale della serie 2.7: include le modifiche di affidabilità della 2.7.0, mai pubblicata sul canale, e la correzione del colore della retroilluminazione. Formato del pacchetto e partizioni invariati.",
+                    "summary":  "BETA per collaudo: nuova interfaccia web in stile app iOS, anche su desktop. Funzioni, comandi al termostato, API e firmware invariati; formato del pacchetto e partizioni invariati.",
                     "notes":  [
-                                  "Il gateway riceve anche comandi JSON frammentati e rifiuta programmi settimanali incompleti. Ricontrolla i dati necessari prima di scrivere sul termostato; un rifiuto non annulla un comando più recente nella UI.",
-                                  "Dopo una scrittura rilegge prima l\u0027oggetto comandato, poi i valori dipendenti a gruppi, senza una scansione completa. Una conferma fallita viene ritentata senza ripetere la scrittura. Il valore precedente non autorizza il comando successivo.",
-                                  "Lo stato web distingue gateway irraggiungibile e termostato offline. Una temperatura vecchia resta leggibile come ultima nota, ma non conferma un comando. In Home Assistant gli oggetti fisici seguono la disponibilità del bus; i climate già rilevati non scompaiono se il termostato è offline al riavvio e i limiti si aggiornano senza riconnessione.",
-                                  "La connessione MQTT evita attese di retry durante la risoluzione DNS. Un guasto al solo broker non deve interrompere il Wi-Fi.",
-                                  "Le impostazioni precedenti vengono lette al primo avvio. Il salvataggio successivo scrive un record unico e si applica al riavvio. «Dimentica Wi-Fi» cancella le credenziali anche per il vecchio firmware.",
-                                  "Gli aggiornamenti successivi verificano la lunghezza prima della scrittura e proteggono la partizione web con una pagina di recupero incorporata. L\u0027installazione di questa versione dalla 2.6.2 usa ancora il vecchio installatore.",
-                                  "Il colore BACnet `AV:529` con valore `11` ora appare come «Rosso», come il codice `2`. Per altri codici sconosciuti la pagina mostra il numero ricevuto; «Colore non disponibile» indica un valore mancante, anche quando il gateway perde un colore letto in precedenza."
+                                  "Tre schede Termostato, Clima e Dispositivo: in basso su smartphone, in una barra laterale su computer. Titoli grandi, liste raggruppate, logo Delta e tema chiaro/scuro di sistema.",
+                                  "Ogni stanza è un riquadro compatto. Toccandolo si apre un pannello con quadrante e pulsanti − / + per il target; nessun cursore a scorrimento.",
+                                  "Party e Vacanze scelgono la durata in un pannello dal basso. Presenza ed Eco sono interruttori iOS; le conferme di riavvio e ripristino sono action sheet al posto delle finestre del browser.",
+                                  "La programmazione settimanale è una pagina di Clima con fasce come interruttori. Su smartphone si torna indietro anche scorrendo dal bordo sinistro.",
+                                  "I pannelli si chiudono trascinandoli verso il basso, con Esc o toccando fuori. I passaggi tra pagine sono animati e rispettano l\u0027impostazione «riduci movimento».",
+                                  "Icone, logo, icona della schermata Home e schermate di avvio sono incorporati nel dispositivo: l\u0027interfaccia non scarica nulla da internet. L\u0027unico collegamento esterno resta il controllo aggiornamenti."
                               ],
-                    "file":  "firmware/esp1-monet-v2.7.1.emu",
+                    "file":  "firmware/esp1-monet-v2.8.0.emu",
                     "size":  2552040,
-                    "sha256":  "aa000b7dd2aff9fef560123e0c4e735d4cb02880824a7d9b3f0b13c59fcebfbc"
+                    "sha256":  "51483b4e1f5768ce74fc8164166092323415003089f650ac481d6770597bd3b0"
                 },
     "previous":  {
-                     "version":  "2.6.2",
-                     "published":  "2026-11-18",
-                     "summary":  "BETA: soglia della chip Riscalda aumentata a 0,5 gradi per singola area, coerente tra web UI e Home Assistant. Verifiche automatiche eseguite; prova sul dispositivo non eseguita.",
+                     "version":  "2.7.1",
+                     "published":  "2026-11-23",
+                     "summary":  "Prima release ufficiale della serie 2.7: include le modifiche di affidabilità della 2.7.0, mai pubblicata sul canale, e la correzione del colore della retroilluminazione. Formato del pacchetto e partizioni invariati.",
                      "notes":  [
-                                   "In riscaldamento, ogni area abilitata mostra Riscalda quando la temperatura e\u0027 almeno 0,5 gradi sotto il proprio target effettivo, includendo la soglia esatta. Con target 20 gradi, la chip compare da 19,5 gradi in giu e non compare a 19,6 gradi.",
-                                   "Home Assistant riceve la stessa soglia tramite hvac_action del firmware; non serve aggiornare separatamente la card Lovelace. La modifica riguarda soltanto l\u0027indicazione di stato, non la regolazione del termostato.",
-                                   "Restano invariate le funzionalita della programmazione settimanale e del recupero MQTT delle versioni precedenti."
+                                   "Il gateway riceve anche comandi JSON frammentati e rifiuta programmi settimanali incompleti. Ricontrolla i dati necessari prima di scrivere sul termostato; un rifiuto non annulla un comando più recente nella UI.",
+                                   "Dopo una scrittura rilegge prima l\u0027oggetto comandato, poi i valori dipendenti a gruppi, senza una scansione completa. Una conferma fallita viene ritentata senza ripetere la scrittura. Il valore precedente non autorizza il comando successivo.",
+                                   "Lo stato web distingue gateway irraggiungibile e termostato offline. Una temperatura vecchia resta leggibile come ultima nota, ma non conferma un comando. In Home Assistant gli oggetti fisici seguono la disponibilità del bus; i climate già rilevati non scompaiono se il termostato è offline al riavvio e i limiti si aggiornano senza riconnessione.",
+                                   "La connessione MQTT evita attese di retry durante la risoluzione DNS. Un guasto al solo broker non deve interrompere il Wi-Fi.",
+                                   "Le impostazioni precedenti vengono lette al primo avvio. Il salvataggio successivo scrive un record unico e si applica al riavvio. «Dimentica Wi-Fi» cancella le credenziali anche per il vecchio firmware.",
+                                   "Gli aggiornamenti successivi verificano la lunghezza prima della scrittura e proteggono la partizione web con una pagina di recupero incorporata. L\u0027installazione di questa versione dalla 2.6.2 usa ancora il vecchio installatore.",
+                                   "Il colore BACnet `AV:529` con valore `11` ora appare come «Rosso», come il codice `2`. Per altri codici sconosciuti la pagina mostra il numero ricevuto; «Colore non disponibile» indica un valore mancante, anche quando il gateway perde un colore letto in precedenza."
                                ],
-                     "file":  "firmware/esp1-monet-v2.6.2.emu",
-                     "size":  2546328,
-                     "sha256":  "c43ac593293e22925976d0c53ae08ced95c9fc58c19a622ab5d4d116a96486ee"
+                     "file":  "firmware/esp1-monet-v2.7.1.emu",
+                     "size":  2552040,
+                     "sha256":  "aa000b7dd2aff9fef560123e0c4e735d4cb02880824a7d9b3f0b13c59fcebfbc"
                  }
 }
