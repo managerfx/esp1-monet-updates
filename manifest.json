@@ -1,31 +1,34 @@
 {
-  "schema": 1,
-  "device": "esp1-monet",
-  "current": {
-    "version": "2.6.2",
-    "published": "2026-11-18",
-    "summary": "BETA: soglia della chip Riscalda aumentata a 0,5 gradi per singola area, coerente tra web UI e Home Assistant. Verifiche automatiche eseguite; prova sul dispositivo non eseguita.",
-    "notes": [
-      "In riscaldamento, ogni area abilitata mostra Riscalda quando la temperatura e' almeno 0,5 gradi sotto il proprio target effettivo, includendo la soglia esatta. Con target 20 gradi, la chip compare da 19,5 gradi in giu e non compare a 19,6 gradi.",
-      "Home Assistant riceve la stessa soglia tramite hvac_action del firmware; non serve aggiornare separatamente la card Lovelace. La modifica riguarda soltanto l'indicazione di stato, non la regolazione del termostato.",
-      "Restano invariate le funzionalita della programmazione settimanale e del recupero MQTT delle versioni precedenti."
-    ],
-    "file": "firmware/esp1-monet-v2.6.2.emu",
-    "size": 2546328,
-    "sha256": "c43ac593293e22925976d0c53ae08ced95c9fc58c19a622ab5d4d116a96486ee"
-  },
-  "previous": {
-    "version": "2.6.1",
-    "published": "2026-11-13",
-    "summary": "BETA: indicazione Riscalda coerente per singola area nella web UI e in Home Assistant. Mantiene le funzionalita della programmazione settimanale introdotte nella 2.6.0; verifiche automatiche completate, prova sul dispositivo non eseguita.",
-    "notes": [
-      "In riscaldamento, ogni area abilitata mostra Riscalda quando la temperatura e' almeno 0,4 gradi sotto il proprio target effettivo, includendo la soglia esatta. La richiesta globale di calore non accende piu la chip su tutte le aree della web UI.",
-      "Home Assistant riceve la stessa soglia per area tramite hvac_action pubblicata dal firmware. Non serve aggiornare separatamente la card Lovelace.",
-      "Restano presenti il refresh della programmazione settimanale, la validazione dei 28 orari, la gestione degli errori e dei timeout e la conferma del salvataggio tramite rilettura della 2.6.0.",
-      "La piattaforma di compilazione ESP32 e' fissata alla 6.12.0, con Arduino-ESP32 2.0.17 ed ESP-IDF 4.4.7, per evitare aggiornamenti impliciti del framework durante il build. Questa versione e' verificata con test automatici e compilazione, senza prova hardware."
-    ],
-    "file": "firmware/esp1-monet-v2.6.1.emu",
-    "size": 2546328,
-    "sha256": "b520af3a20bcdca0301dbd96100e4d5d3347b859dca9c140e400810bc77eeb02"
-  }
+    "schema":  1,
+    "device":  "esp1-monet",
+    "current":  {
+                    "version":  "2.7.1",
+                    "published":  "2026-11-23",
+                    "summary":  "Prima release ufficiale della serie 2.7: include le modifiche di affidabilità della 2.7.0, mai pubblicata sul canale, e la correzione del colore della retroilluminazione. Formato del pacchetto e partizioni invariati.",
+                    "notes":  [
+                                  "Il gateway riceve anche comandi JSON frammentati e rifiuta programmi settimanali incompleti. Ricontrolla i dati necessari prima di scrivere sul termostato; un rifiuto non annulla un comando più recente nella UI.",
+                                  "Dopo una scrittura rilegge prima l\u0027oggetto comandato, poi i valori dipendenti a gruppi, senza una scansione completa. Una conferma fallita viene ritentata senza ripetere la scrittura. Il valore precedente non autorizza il comando successivo.",
+                                  "Lo stato web distingue gateway irraggiungibile e termostato offline. Una temperatura vecchia resta leggibile come ultima nota, ma non conferma un comando. In Home Assistant gli oggetti fisici seguono la disponibilità del bus; i climate già rilevati non scompaiono se il termostato è offline al riavvio e i limiti si aggiornano senza riconnessione.",
+                                  "La connessione MQTT evita attese di retry durante la risoluzione DNS. Un guasto al solo broker non deve interrompere il Wi-Fi.",
+                                  "Le impostazioni precedenti vengono lette al primo avvio. Il salvataggio successivo scrive un record unico e si applica al riavvio. «Dimentica Wi-Fi» cancella le credenziali anche per il vecchio firmware.",
+                                  "Gli aggiornamenti successivi verificano la lunghezza prima della scrittura e proteggono la partizione web con una pagina di recupero incorporata. L\u0027installazione di questa versione dalla 2.6.2 usa ancora il vecchio installatore.",
+                                  "Il colore BACnet `AV:529` con valore `11` ora appare come «Rosso», come il codice `2`. Per altri codici sconosciuti la pagina mostra il numero ricevuto; «Colore non disponibile» indica un valore mancante, anche quando il gateway perde un colore letto in precedenza."
+                              ],
+                    "file":  "firmware/esp1-monet-v2.7.1.emu",
+                    "size":  2552040,
+                    "sha256":  "aa000b7dd2aff9fef560123e0c4e735d4cb02880824a7d9b3f0b13c59fcebfbc"
+                },
+    "previous":  {
+                     "version":  "2.6.2",
+                     "published":  "2026-11-18",
+                     "summary":  "BETA: soglia della chip Riscalda aumentata a 0,5 gradi per singola area, coerente tra web UI e Home Assistant. Verifiche automatiche eseguite; prova sul dispositivo non eseguita.",
+                     "notes":  [
+                                   "In riscaldamento, ogni area abilitata mostra Riscalda quando la temperatura e\u0027 almeno 0,5 gradi sotto il proprio target effettivo, includendo la soglia esatta. Con target 20 gradi, la chip compare da 19,5 gradi in giu e non compare a 19,6 gradi.",
+                                   "Home Assistant riceve la stessa soglia tramite hvac_action del firmware; non serve aggiornare separatamente la card Lovelace. La modifica riguarda soltanto l\u0027indicazione di stato, non la regolazione del termostato.",
+                                   "Restano invariate le funzionalita della programmazione settimanale e del recupero MQTT delle versioni precedenti."
+                               ],
+                     "file":  "firmware/esp1-monet-v2.6.2.emu",
+                     "size":  2546328,
+                     "sha256":  "c43ac593293e22925976d0c53ae08ced95c9fc58c19a622ab5d4d116a96486ee"
+                 }
 }
