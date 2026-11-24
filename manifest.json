@@ -2,36 +2,35 @@
     "schema":  1,
     "device":  "esp1-monet",
     "current":  {
-                    "version":  "2.8.0",
-                    "published":  "2026-11-23",
-                    "summary":  "BETA per collaudo: nuova interfaccia web in stile app iOS, anche su desktop. Funzioni, comandi al termostato, API e firmware invariati; formato del pacchetto e partizioni invariati.",
+                    "version":  "2.9.0",
+                    "published":  "2026-11-24",
+                    "summary":  "Release ufficiale della nuova interfaccia web, ora nello stile Liquid Glass di iOS e macOS 26, su smartphone e computer. Funzioni, comandi al termostato, API e firmware invariati; formato del pacchetto e partizioni invariati.",
                     "notes":  [
-                                  "Tre schede Termostato, Clima e Dispositivo: in basso su smartphone, in una barra laterale su computer. Titoli grandi, liste raggruppate, logo Delta e tema chiaro/scuro di sistema.",
-                                  "Ogni stanza è un riquadro compatto. Toccandolo si apre un pannello con quadrante e pulsanti − / + per il target; nessun cursore a scorrimento.",
-                                  "Party e Vacanze scelgono la durata in un pannello dal basso. Presenza ed Eco sono interruttori iOS; le conferme di riavvio e ripristino sono action sheet al posto delle finestre del browser.",
-                                  "La programmazione settimanale è una pagina di Clima con fasce come interruttori. Su smartphone si torna indietro anche scorrendo dal bordo sinistro.",
-                                  "I pannelli si chiudono trascinandoli verso il basso, con Esc o toccando fuori. I passaggi tra pagine sono animati e rispettano l\u0027impostazione «riduci movimento».",
-                                  "Icone, logo, icona della schermata Home e schermate di avvio sono incorporati nel dispositivo: l\u0027interfaccia non scarica nulla da internet. L\u0027unico collegamento esterno resta il controllo aggiornamenti."
+                                  "Barra delle schede a capsula di vetro sospesa, con evidenziatore che segue la scheda attiva; su computer è un pannello laterale di vetro.",
+                                  "Pulsanti in alto, pillole di stato, pulsanti − / +, selettori, pannelli, avvisi e conferme sono in vetro; liste e riquadri restano solidi e leggibili, con angoli più ampi. Interruttori in stile iOS 26.",
+                                  "Scorrendo, il contenuto sfuma sotto la barra in alto, che resta sempre visibile. Il logo Delta resta libero; il quadrante della stanza mostra solo «Riscaldamento» o «Raffrescamento».",
+                                  "In Dispositivo il campo in modifica diventa una capsula evidenziata, i valori cambiati restano in blu finché non si salva e quelli fuori limite diventano rossi. Con modifiche non salvate «Salva» resta sempre a portata di mano.",
+                                  "Comprende tutte le novità della beta 2.8.0: schede Termostato, Clima e Dispositivo, pannelli trascinabili, programmazione come pagina dedicata, conferme come action sheet, icone e schermate di avvio incorporate senza accessi a internet.",
+                                  "Correzioni: «Avvia Party» e «Avvia Vacanze» premuti più volte inviano un solo comando; alla chiusura di un pannello la tastiera torna al punto di partenza; i pulsanti disattivati sono grigi e non sembrano più cliccabili."
                               ],
-                    "file":  "firmware/esp1-monet-v2.8.0.emu",
+                    "file":  "firmware/esp1-monet-v2.9.0.emu",
                     "size":  2552040,
-                    "sha256":  "51483b4e1f5768ce74fc8164166092323415003089f650ac481d6770597bd3b0"
+                    "sha256":  "9525ba28d8a16afd8e83392fa236ead09062d65b50cc8a9da1331266ba0e27f0"
                 },
     "previous":  {
-                     "version":  "2.7.1",
+                     "version":  "2.8.0",
                      "published":  "2026-11-23",
-                     "summary":  "Prima release ufficiale della serie 2.7: include le modifiche di affidabilità della 2.7.0, mai pubblicata sul canale, e la correzione del colore della retroilluminazione. Formato del pacchetto e partizioni invariati.",
+                     "summary":  "BETA per collaudo: nuova interfaccia web in stile app iOS, anche su desktop. Funzioni, comandi al termostato, API e firmware invariati; formato del pacchetto e partizioni invariati.",
                      "notes":  [
-                                   "Il gateway riceve anche comandi JSON frammentati e rifiuta programmi settimanali incompleti. Ricontrolla i dati necessari prima di scrivere sul termostato; un rifiuto non annulla un comando più recente nella UI.",
-                                   "Dopo una scrittura rilegge prima l\u0027oggetto comandato, poi i valori dipendenti a gruppi, senza una scansione completa. Una conferma fallita viene ritentata senza ripetere la scrittura. Il valore precedente non autorizza il comando successivo.",
-                                   "Lo stato web distingue gateway irraggiungibile e termostato offline. Una temperatura vecchia resta leggibile come ultima nota, ma non conferma un comando. In Home Assistant gli oggetti fisici seguono la disponibilità del bus; i climate già rilevati non scompaiono se il termostato è offline al riavvio e i limiti si aggiornano senza riconnessione.",
-                                   "La connessione MQTT evita attese di retry durante la risoluzione DNS. Un guasto al solo broker non deve interrompere il Wi-Fi.",
-                                   "Le impostazioni precedenti vengono lette al primo avvio. Il salvataggio successivo scrive un record unico e si applica al riavvio. «Dimentica Wi-Fi» cancella le credenziali anche per il vecchio firmware.",
-                                   "Gli aggiornamenti successivi verificano la lunghezza prima della scrittura e proteggono la partizione web con una pagina di recupero incorporata. L\u0027installazione di questa versione dalla 2.6.2 usa ancora il vecchio installatore.",
-                                   "Il colore BACnet `AV:529` con valore `11` ora appare come «Rosso», come il codice `2`. Per altri codici sconosciuti la pagina mostra il numero ricevuto; «Colore non disponibile» indica un valore mancante, anche quando il gateway perde un colore letto in precedenza."
+                                   "Tre schede Termostato, Clima e Dispositivo: in basso su smartphone, in una barra laterale su computer. Titoli grandi, liste raggruppate, logo Delta e tema chiaro/scuro di sistema.",
+                                   "Ogni stanza è un riquadro compatto. Toccandolo si apre un pannello con quadrante e pulsanti − / + per il target; nessun cursore a scorrimento.",
+                                   "Party e Vacanze scelgono la durata in un pannello dal basso. Presenza ed Eco sono interruttori iOS; le conferme di riavvio e ripristino sono action sheet al posto delle finestre del browser.",
+                                   "La programmazione settimanale è una pagina di Clima con fasce come interruttori. Su smartphone si torna indietro anche scorrendo dal bordo sinistro.",
+                                   "I pannelli si chiudono trascinandoli verso il basso, con Esc o toccando fuori. I passaggi tra pagine sono animati e rispettano l\u0027impostazione «riduci movimento».",
+                                   "Icone, logo, icona della schermata Home e schermate di avvio sono incorporati nel dispositivo: l\u0027interfaccia non scarica nulla da internet. L\u0027unico collegamento esterno resta il controllo aggiornamenti."
                                ],
-                     "file":  "firmware/esp1-monet-v2.7.1.emu",
+                     "file":  "firmware/esp1-monet-v2.8.0.emu",
                      "size":  2552040,
-                     "sha256":  "aa000b7dd2aff9fef560123e0c4e735d4cb02880824a7d9b3f0b13c59fcebfbc"
+                     "sha256":  "51483b4e1f5768ce74fc8164166092323415003089f650ac481d6770597bd3b0"
                  }
 }
