@@ -2,35 +2,32 @@
     "schema":  1,
     "device":  "esp1-monet",
     "current":  {
-                    "version":  "2.9.0",
+                    "version":  "2.9.1",
                     "published":  "2026-11-24",
-                    "summary":  "Release ufficiale della nuova interfaccia web, ora nello stile Liquid Glass di iOS e macOS 26, su smartphone e computer. Funzioni, comandi al termostato, API e firmware invariati; formato del pacchetto e partizioni invariati.",
+                    "summary":  "Ritocco dell\u0027interfaccia: i pulsanti di salvataggio restano sempre a portata di mano. Funzioni, comandi al termostato, API e firmware invariati; formato del pacchetto e partizioni invariati.",
                     "notes":  [
-                                  "Barra delle schede a capsula di vetro sospesa, con evidenziatore che segue la scheda attiva; su computer è un pannello laterale di vetro.",
-                                  "Pulsanti in alto, pillole di stato, pulsanti − / +, selettori, pannelli, avvisi e conferme sono in vetro; liste e riquadri restano solidi e leggibili, con angoli più ampi. Interruttori in stile iOS 26.",
-                                  "Scorrendo, il contenuto sfuma sotto la barra in alto, che resta sempre visibile. Il logo Delta resta libero; il quadrante della stanza mostra solo «Riscaldamento» o «Raffrescamento».",
-                                  "In Dispositivo il campo in modifica diventa una capsula evidenziata, i valori cambiati restano in blu finché non si salva e quelli fuori limite diventano rossi. Con modifiche non salvate «Salva» resta sempre a portata di mano.",
-                                  "Comprende tutte le novità della beta 2.8.0: schede Termostato, Clima e Dispositivo, pannelli trascinabili, programmazione come pagina dedicata, conferme come action sheet, icone e schermate di avvio incorporate senza accessi a internet.",
-                                  "Correzioni: «Avvia Party» e «Avvia Vacanze» premuti più volte inviano un solo comando; alla chiusura di un pannello la tastiera torna al punto di partenza; i pulsanti disattivati sono grigi e non sembrano più cliccabili."
+                                  "In Dispositivo «Salva» e in Programmazione «Salva programmazione» galleggiano sempre in vetro sopra la barra delle schede (in fondo alla finestra su computer), anche prima di modificare un valore.",
+                                  "«Riavvia ora», dopo un salvataggio che lo richiede, resta nella pagina sotto «Salva».",
+                                  "Pulizia interna dello stile: colori, pulsanti e indicatori di caricamento unificati, senza cambi visibili nelle funzioni."
                               ],
-                    "file":  "firmware/esp1-monet-v2.9.0.emu",
+                    "file":  "firmware/esp1-monet-v2.9.1.emu",
                     "size":  2552040,
-                    "sha256":  "9525ba28d8a16afd8e83392fa236ead09062d65b50cc8a9da1331266ba0e27f0"
+                    "sha256":  "a70a2422e9b3b63e4956d831431dba2c62fe33cba3a3e16d6e8e6d984c10ccdd"
                 },
     "previous":  {
-                     "version":  "2.8.0",
-                     "published":  "2026-11-23",
-                     "summary":  "BETA per collaudo: nuova interfaccia web in stile app iOS, anche su desktop. Funzioni, comandi al termostato, API e firmware invariati; formato del pacchetto e partizioni invariati.",
+                     "version":  "2.9.0",
+                     "published":  "2026-11-24",
+                     "summary":  "Release ufficiale della nuova interfaccia web, ora nello stile Liquid Glass di iOS e macOS 26, su smartphone e computer. Funzioni, comandi al termostato, API e firmware invariati; formato del pacchetto e partizioni invariati.",
                      "notes":  [
-                                   "Tre schede Termostato, Clima e Dispositivo: in basso su smartphone, in una barra laterale su computer. Titoli grandi, liste raggruppate, logo Delta e tema chiaro/scuro di sistema.",
-                                   "Ogni stanza è un riquadro compatto. Toccandolo si apre un pannello con quadrante e pulsanti − / + per il target; nessun cursore a scorrimento.",
-                                   "Party e Vacanze scelgono la durata in un pannello dal basso. Presenza ed Eco sono interruttori iOS; le conferme di riavvio e ripristino sono action sheet al posto delle finestre del browser.",
-                                   "La programmazione settimanale è una pagina di Clima con fasce come interruttori. Su smartphone si torna indietro anche scorrendo dal bordo sinistro.",
-                                   "I pannelli si chiudono trascinandoli verso il basso, con Esc o toccando fuori. I passaggi tra pagine sono animati e rispettano l\u0027impostazione «riduci movimento».",
-                                   "Icone, logo, icona della schermata Home e schermate di avvio sono incorporati nel dispositivo: l\u0027interfaccia non scarica nulla da internet. L\u0027unico collegamento esterno resta il controllo aggiornamenti."
+                                   "Barra delle schede a capsula di vetro sospesa, con evidenziatore che segue la scheda attiva; su computer è un pannello laterale di vetro.",
+                                   "Pulsanti in alto, pillole di stato, pulsanti − / +, selettori, pannelli, avvisi e conferme sono in vetro; liste e riquadri restano solidi e leggibili, con angoli più ampi. Interruttori in stile iOS 26.",
+                                   "Scorrendo, il contenuto sfuma sotto la barra in alto, che resta sempre visibile. Il logo Delta resta libero; il quadrante della stanza mostra solo «Riscaldamento» o «Raffrescamento».",
+                                   "In Dispositivo il campo in modifica diventa una capsula evidenziata, i valori cambiati restano in blu finché non si salva e quelli fuori limite diventano rossi. Con modifiche non salvate «Salva» resta sempre a portata di mano.",
+                                   "Comprende tutte le novità della beta 2.8.0: schede Termostato, Clima e Dispositivo, pannelli trascinabili, programmazione come pagina dedicata, conferme come action sheet, icone e schermate di avvio incorporate senza accessi a internet.",
+                                   "Correzioni: «Avvia Party» e «Avvia Vacanze» premuti più volte inviano un solo comando; alla chiusura di un pannello la tastiera torna al punto di partenza; i pulsanti disattivati sono grigi e non sembrano più cliccabili."
                                ],
-                     "file":  "firmware/esp1-monet-v2.8.0.emu",
+                     "file":  "firmware/esp1-monet-v2.9.0.emu",
                      "size":  2552040,
-                     "sha256":  "51483b4e1f5768ce74fc8164166092323415003089f650ac481d6770597bd3b0"
+                     "sha256":  "9525ba28d8a16afd8e83392fa236ead09062d65b50cc8a9da1331266ba0e27f0"
                  }
 }
