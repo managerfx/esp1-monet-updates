@@ -2,34 +2,25 @@
     "schema":  1,
     "device":  "esp1-monet",
     "current":  {
-                    "version":  "2.10.2",
+                    "version":  "2.10.3",
                     "published":  "2026-11-26",
-                    "summary":  "Correzione: dopo la pausa per inattività l\u0027app riparte sempre dal Termostato. Funzioni, comandi al termostato, API e firmware invariati; formato del pacchetto e partizioni invariati.",
+                    "summary":  "Ritocco della barra delle schede: Dispositivo torna in fondo. Funzioni, comandi al termostato, API e firmware invariati; formato del pacchetto e partizioni invariati.",
                     "notes":  [
-                                  "«Ricarica» nella schermata «App in pausa» riapre l\u0027app sulla scheda Termostato, qualunque pagina fosse aperta al momento della pausa."
+                                  "L\u0027ordine delle schede è Termostato, Clima, Storico, Dispositivo, in basso su telefono e nella barra laterale su computer."
                               ],
-                    "file":  "firmware/esp1-monet-v2.10.2.emu",
+                    "file":  "firmware/esp1-monet-v2.10.3.emu",
                     "size":  2562872,
-                    "sha256":  "b69d82ea61e66214c8e267681776c42ec9d6fb26ea66254488af60e78664220c"
+                    "sha256":  "0844651e9dfb94ff09e2bc7783ee07bb009fa05832131e50ad43006857307bfc"
                 },
     "previous":  {
-                     "version":  "2.10.1",
+                     "version":  "2.10.2",
                      "published":  "2026-11-26",
-                     "summary":  "Nuova scheda Storico: confronta sull\u0027andamento degli ultimi giorni temperature, setpoint, fancoil e comandi, leggendo i registri che il termostato conserva già. Comandi al termostato e funzioni esistenti invariati; formato del pacchetto e partizioni invariati.",
+                     "summary":  "Correzione: dopo la pausa per inattività l\u0027app riparte sempre dal Termostato. Funzioni, comandi al termostato, API e firmware invariati; formato del pacchetto e partizioni invariati.",
                      "notes":  [
-                                   "Nuova scheda Storico, la quarta nella barra: un grafico con i valori registrati dal termostato, fino a 21 giorni.",
-                                   "Intervallo a scelta con due date, oppure 24 ore, 7 giorni e Max; all\u0027apertura mostra le ultime 24 ore.",
-                                   "Fino a 6 valori a confronto, scelti da un elenco con Temperature, Setpoint, Fancoil, Comandi e Sistema; le aree non utilizzate non compaiono.",
-                                   "Temperature e setpoint condividono una fascia in °C, le uscite fancoil una in %; velocità, modalità e stagione sono a gradini con le etichette, presenza, eco e abilitazioni a bande acceso/spento.",
-                                   "Toccando o passando sul grafico una linea verticale mostra il valore di ogni serie in quell\u0027istante; al cambio dell\u0027ora la linea si interrompe.",
-                                   "Dopo un\u0027interruzione del registro del termostato, per esempio un suo riavvio, l\u0027ultimo valore prosegue tratteggiato e indicato come «non confermato».",
-                                   "I dati si caricano solo all\u0027apertura e con «Aggiorna»; la scelta dei valori e dell\u0027intervallo viene ricordata.",
-                                   "Il caricamento procede una richiesta alla volta e lo storico cede il passo alle modifiche dei setpoint e ai comandi.",
-                                   "Nuovo endpoint `/api/trend` di sola lettura e campo `tl` in `/api/schema` con il catalogo dei 21 Trend Log del termostato.",
-                                   "Ritocchi: «Salva» in Dispositivo e in Programmazione si accende e galleggia solo quando c\u0027è qualcosa da salvare; i campi password non hanno più l\u0027occhio; l\u0027indicatore COV del Termostato è più piccolo e senza vetro; nei pannelli che scorrono titolo e chiusura restano in vista."
+                                   "«Ricarica» nella schermata «App in pausa» riapre l\u0027app sulla scheda Termostato, qualunque pagina fosse aperta al momento della pausa."
                                ],
-                     "file":  "firmware/esp1-monet-v2.10.1.emu",
+                     "file":  "firmware/esp1-monet-v2.10.2.emu",
                      "size":  2562872,
-                     "sha256":  "9eeaaae8b13f8a637765fe74e09aa1622d373c134afda2d769fa1622ff929b69"
+                     "sha256":  "b69d82ea61e66214c8e267681776c42ec9d6fb26ea66254488af60e78664220c"
                  }
 }
