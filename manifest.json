@@ -2,30 +2,37 @@
     "schema":  1,
     "device":  "esp1-monet",
     "current":  {
-                    "version":  "2.9.2",
-                    "published":  "2026-11-24",
-                    "summary":  "Vetro usato come indica Apple: solo sui controlli che galleggiano sopra i contenuti, ora più vitrei. Funzioni, comandi al termostato, API e firmware invariati; formato del pacchetto e partizioni invariati.",
+                    "version":  "2.10.1",
+                    "published":  "2026-11-26",
+                    "summary":  "Nuova scheda Storico: confronta sull\u0027andamento degli ultimi giorni temperature, setpoint, fancoil e comandi, leggendo i registri che il termostato conserva già. Comandi al termostato e funzioni esistenti invariati; formato del pacchetto e partizioni invariati.",
                     "notes":  [
-                                  "I pulsanti − / + del quadrante della stanza sono tondi e pieni, senza la capsula che li conteneva.",
-                                  "Stepper, selettori, orari, giorni, preset di durata, ricerca e pillole di stato tornano a superfici standard: il vetro resta su barra delle schede, pulsanti in alto, pannelli, avvisi e Salva galleggiante.",
-                                  "Le capsule di vetro hanno un riflesso dall\u0027alto e un bordo luminoso; le capsule blu un riflesso leggero.",
-                                  "I pulsanti disattivati sono grigi pieni e leggibili, anche quando Salva galleggia sopra il contenuto."
+                                  "Nuova scheda Storico, la quarta nella barra: un grafico con i valori registrati dal termostato, fino a 21 giorni.",
+                                  "Intervallo a scelta con due date, oppure 24 ore, 7 giorni e Max; all\u0027apertura mostra le ultime 24 ore.",
+                                  "Fino a 6 valori a confronto, scelti da un elenco con Temperature, Setpoint, Fancoil, Comandi e Sistema; le aree non utilizzate non compaiono.",
+                                  "Temperature e setpoint condividono una fascia in °C, le uscite fancoil una in %; velocità, modalità e stagione sono a gradini con le etichette, presenza, eco e abilitazioni a bande acceso/spento.",
+                                  "Toccando o passando sul grafico una linea verticale mostra il valore di ogni serie in quell\u0027istante; al cambio dell\u0027ora la linea si interrompe.",
+                                  "Dopo un\u0027interruzione del registro del termostato, per esempio un suo riavvio, l\u0027ultimo valore prosegue tratteggiato e indicato come «non confermato».",
+                                  "I dati si caricano solo all\u0027apertura e con «Aggiorna»; la scelta dei valori e dell\u0027intervallo viene ricordata.",
+                                  "Il caricamento procede una richiesta alla volta e lo storico cede il passo alle modifiche dei setpoint e ai comandi.",
+                                  "Nuovo endpoint `/api/trend` di sola lettura e campo `tl` in `/api/schema` con il catalogo dei 21 Trend Log del termostato.",
+                                  "Ritocchi: «Salva» in Dispositivo e in Programmazione si accende e galleggia solo quando c\u0027è qualcosa da salvare; i campi password non hanno più l\u0027occhio; l\u0027indicatore COV del Termostato è più piccolo e senza vetro; nei pannelli che scorrono titolo e chiusura restano in vista."
                               ],
-                    "file":  "firmware/esp1-monet-v2.9.2.emu",
-                    "size":  2552040,
-                    "sha256":  "621e2f26ee338fc1ffb61481a1e9709f6d9b351998386ab3ace517ee21245776"
+                    "file":  "firmware/esp1-monet-v2.10.1.emu",
+                    "size":  2562872,
+                    "sha256":  "9eeaaae8b13f8a637765fe74e09aa1622d373c134afda2d769fa1622ff929b69"
                 },
     "previous":  {
-                     "version":  "2.9.1",
+                     "version":  "2.9.2",
                      "published":  "2026-11-24",
-                     "summary":  "Ritocco dell\u0027interfaccia: i pulsanti di salvataggio restano sempre a portata di mano. Funzioni, comandi al termostato, API e firmware invariati; formato del pacchetto e partizioni invariati.",
+                     "summary":  "Vetro usato come indica Apple: solo sui controlli che galleggiano sopra i contenuti, ora più vitrei. Funzioni, comandi al termostato, API e firmware invariati; formato del pacchetto e partizioni invariati.",
                      "notes":  [
-                                   "In Dispositivo «Salva» e in Programmazione «Salva programmazione» galleggiano sempre in vetro sopra la barra delle schede (in fondo alla finestra su computer), anche prima di modificare un valore.",
-                                   "«Riavvia ora», dopo un salvataggio che lo richiede, resta nella pagina sotto «Salva».",
-                                   "Pulizia interna dello stile: colori, pulsanti e indicatori di caricamento unificati, senza cambi visibili nelle funzioni."
+                                   "I pulsanti − / + del quadrante della stanza sono tondi e pieni, senza la capsula che li conteneva.",
+                                   "Stepper, selettori, orari, giorni, preset di durata, ricerca e pillole di stato tornano a superfici standard: il vetro resta su barra delle schede, pulsanti in alto, pannelli, avvisi e Salva galleggiante.",
+                                   "Le capsule di vetro hanno un riflesso dall\u0027alto e un bordo luminoso; le capsule blu un riflesso leggero.",
+                                   "I pulsanti disattivati sono grigi pieni e leggibili, anche quando Salva galleggia sopra il contenuto."
                                ],
-                     "file":  "firmware/esp1-monet-v2.9.1.emu",
+                     "file":  "firmware/esp1-monet-v2.9.2.emu",
                      "size":  2552040,
-                     "sha256":  "a70a2422e9b3b63e4956d831431dba2c62fe33cba3a3e16d6e8e6d984c10ccdd"
+                     "sha256":  "621e2f26ee338fc1ffb61481a1e9709f6d9b351998386ab3ace517ee21245776"
                  }
 }
