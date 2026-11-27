@@ -2,31 +2,33 @@
     "schema":  1,
     "device":  "esp1-monet",
     "current":  {
-                    "version":  "2.11.1",
-                    "published":  "2026-11-26",
-                    "summary":  "Lo stato Riscalda / A regime di ogni area segue il comando di zona del termostato, cioè l\u0027apertura delle valvole dell\u0027acqua calda, invece di una stima da temperatura e setpoint. Comprende la beta 2.11.0 e alcuni ritocchi alla scheda della stanza. Formato del pacchetto e partizioni invariati.",
+                    "version":  "2.11.2",
+                    "published":  "2026-11-27",
+                    "summary":  "Correzione delle schede che salgono dal basso: si chiudono trascinando anche dopo aver scorso il contenuto e la pagina sotto resta ferma. Comandi al termostato, API e firmware invariati; formato del pacchetto e partizioni invariati.",
                     "notes":  [
-                                  "In riscaldamento la card di ogni area mostra «Riscalda» quando il termostato apre le valvole dell\u0027acqua calda di quell\u0027area e «A regime» quando le chiude.",
-                                  "Lo stesso stato arriva a Home Assistant come azione del climate di ciascuna area.",
-                                  "I tre comandi di zona sono letti ogni 5 minuti e riletti subito dopo una modifica del setpoint o un cambio di regime.",
-                                  "In raffrescamento il comportamento non cambia: resta valvola fancoil più modulazione.",
-                                  "Sotto il setpoint della stanza la scritta «Vale fino al prossimo Assente», con un\u0027icona info che spiega che il valore torna a quello base dell\u0027area al prossimo passaggio ad Assente.",
-                                  "L\u0027etichetta della temperatura nella scheda della stanza inizia con la maiuscola («Temperatura attuale»).",
-                                  "Quando compare «Sei ancora qui?» lo sfondo dell\u0027app è sfocato."
+                                  "Dopo aver scorso il contenuto di una scheda, ad esempio «Aggiungi valore» nello Storico, riportandolo in cima e continuando verso il basso la scheda si chiude con lo stesso gesto.",
+                                  "Trascinando dalla maniglia o dall\u0027intestazione la scheda si chiude sempre, anche con il contenuto scorso.",
+                                  "Mentre una scheda è aperta la pagina sotto non scorre più, nemmeno trascinando sull\u0027intestazione o sullo sfondo."
                               ],
-                    "file":  "firmware/esp1-monet-v2.11.1.emu",
+                    "file":  "firmware/esp1-monet-v2.11.2.emu",
                     "size":  2563176,
-                    "sha256":  "d0797ccb09875892b6d66aee6cb9a0b470b03f962da3ea9d416bb01d236b9f77"
+                    "sha256":  "9956f76682e6ffe849229efb3e0d6ce3749603b62427ca9d7535b9b16c960f9e"
                 },
     "previous":  {
-                     "version":  "2.10.3",
+                     "version":  "2.11.1",
                      "published":  "2026-11-26",
-                     "summary":  "Ritocco della barra delle schede: Dispositivo torna in fondo. Funzioni, comandi al termostato, API e firmware invariati; formato del pacchetto e partizioni invariati.",
+                     "summary":  "Lo stato Riscalda / A regime di ogni area segue il comando di zona del termostato, cioè l\u0027apertura delle valvole dell\u0027acqua calda, invece di una stima da temperatura e setpoint. Comprende la beta 2.11.0 e alcuni ritocchi alla scheda della stanza. Formato del pacchetto e partizioni invariati.",
                      "notes":  [
-                                   "L\u0027ordine delle schede è Termostato, Clima, Storico, Dispositivo, in basso su telefono e nella barra laterale su computer."
+                                   "In riscaldamento la card di ogni area mostra «Riscalda» quando il termostato apre le valvole dell\u0027acqua calda di quell\u0027area e «A regime» quando le chiude.",
+                                   "Lo stesso stato arriva a Home Assistant come azione del climate di ciascuna area.",
+                                   "I tre comandi di zona sono letti ogni 5 minuti e riletti subito dopo una modifica del setpoint o un cambio di regime.",
+                                   "In raffrescamento il comportamento non cambia: resta valvola fancoil più modulazione.",
+                                   "Sotto il setpoint della stanza la scritta «Vale fino al prossimo Assente», con un\u0027icona info che spiega che il valore torna a quello base dell\u0027area al prossimo passaggio ad Assente.",
+                                   "L\u0027etichetta della temperatura nella scheda della stanza inizia con la maiuscola («Temperatura attuale»).",
+                                   "Quando compare «Sei ancora qui?» lo sfondo dell\u0027app è sfocato."
                                ],
-                     "file":  "firmware/esp1-monet-v2.10.3.emu",
-                     "size":  2562872,
-                     "sha256":  "0844651e9dfb94ff09e2bc7783ee07bb009fa05832131e50ad43006857307bfc"
+                     "file":  "firmware/esp1-monet-v2.11.1.emu",
+                     "size":  2563176,
+                     "sha256":  "d0797ccb09875892b6d66aee6cb9a0b470b03f962da3ea9d416bb01d236b9f77"
                  }
 }
