@@ -2,33 +2,30 @@
     "schema":  1,
     "device":  "esp1-monet",
     "current":  {
-                    "version":  "2.11.2",
+                    "version":  "2.11.3",
                     "published":  "2026-11-27",
-                    "summary":  "Correzione delle schede che salgono dal basso: si chiudono trascinando anche dopo aver scorso il contenuto e la pagina sotto resta ferma. Comandi al termostato, API e firmware invariati; formato del pacchetto e partizioni invariati.",
+                    "summary":  "Storico con intervalli a data e ora e scorciatoia «Oggi»; nella pagina Clima i setpoint Presente di ogni area vengono per primi. Comandi al termostato, API e firmware invariati; formato del pacchetto e partizioni invariati.",
                     "notes":  [
-                                  "Dopo aver scorso il contenuto di una scheda, ad esempio «Aggiungi valore» nello Storico, riportandolo in cima e continuando verso il basso la scheda si chiude con lo stesso gesto.",
-                                  "Trascinando dalla maniglia o dall\u0027intestazione la scheda si chiude sempre, anche con il contenuto scorso.",
-                                  "Mentre una scheda è aperta la pagina sotto non scorre più, nemmeno trascinando sull\u0027intestazione o sullo sfondo."
+                                  "Nello Storico l\u0027intervallo è un unico campo: toccandolo si scelgono data e ora di inizio e di fine, fino a 21 giorni.",
+                                  "Nuova scorciatoia «Oggi», dalla mezzanotte ad adesso, accanto a 24 ore, 7 giorni e Max.",
+                                  "Sugli intervalli brevi l\u0027asse del tempo mostra tacche ogni 10, 15 o 30 minuti.",
+                                  "La sezione dei setpoint per area si chiama «Setpoint Presente · Riscaldamento» (o «Raffrescamento», secondo la stagione) ed è la prima della pagina Clima."
                               ],
-                    "file":  "firmware/esp1-monet-v2.11.2.emu",
+                    "file":  "firmware/esp1-monet-v2.11.3.emu",
                     "size":  2563176,
-                    "sha256":  "9956f76682e6ffe849229efb3e0d6ce3749603b62427ca9d7535b9b16c960f9e"
+                    "sha256":  "5779611b61ce743a3dbe44ece3ee143a26f7d2cee11a938c8cab2b2027c01302"
                 },
     "previous":  {
-                     "version":  "2.11.1",
-                     "published":  "2026-11-26",
-                     "summary":  "Lo stato Riscalda / A regime di ogni area segue il comando di zona del termostato, cioè l\u0027apertura delle valvole dell\u0027acqua calda, invece di una stima da temperatura e setpoint. Comprende la beta 2.11.0 e alcuni ritocchi alla scheda della stanza. Formato del pacchetto e partizioni invariati.",
+                     "version":  "2.11.2",
+                     "published":  "2026-11-27",
+                     "summary":  "Correzione delle schede che salgono dal basso: si chiudono trascinando anche dopo aver scorso il contenuto e la pagina sotto resta ferma. Comandi al termostato, API e firmware invariati; formato del pacchetto e partizioni invariati.",
                      "notes":  [
-                                   "In riscaldamento la card di ogni area mostra «Riscalda» quando il termostato apre le valvole dell\u0027acqua calda di quell\u0027area e «A regime» quando le chiude.",
-                                   "Lo stesso stato arriva a Home Assistant come azione del climate di ciascuna area.",
-                                   "I tre comandi di zona sono letti ogni 5 minuti e riletti subito dopo una modifica del setpoint o un cambio di regime.",
-                                   "In raffrescamento il comportamento non cambia: resta valvola fancoil più modulazione.",
-                                   "Sotto il setpoint della stanza la scritta «Vale fino al prossimo Assente», con un\u0027icona info che spiega che il valore torna a quello base dell\u0027area al prossimo passaggio ad Assente.",
-                                   "L\u0027etichetta della temperatura nella scheda della stanza inizia con la maiuscola («Temperatura attuale»).",
-                                   "Quando compare «Sei ancora qui?» lo sfondo dell\u0027app è sfocato."
+                                   "Dopo aver scorso il contenuto di una scheda, ad esempio «Aggiungi valore» nello Storico, riportandolo in cima e continuando verso il basso la scheda si chiude con lo stesso gesto.",
+                                   "Trascinando dalla maniglia o dall\u0027intestazione la scheda si chiude sempre, anche con il contenuto scorso.",
+                                   "Mentre una scheda è aperta la pagina sotto non scorre più, nemmeno trascinando sull\u0027intestazione o sullo sfondo."
                                ],
-                     "file":  "firmware/esp1-monet-v2.11.1.emu",
+                     "file":  "firmware/esp1-monet-v2.11.2.emu",
                      "size":  2563176,
-                     "sha256":  "d0797ccb09875892b6d66aee6cb9a0b470b03f962da3ea9d416bb01d236b9f77"
+                     "sha256":  "9956f76682e6ffe849229efb3e0d6ce3749603b62427ca9d7535b9b16c960f9e"
                  }
 }
