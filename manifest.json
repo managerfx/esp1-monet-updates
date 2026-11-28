@@ -2,6 +2,19 @@
   "schema": 1,
   "device": "esp1-monet",
   "current": {
+    "version": "2.13.0",
+    "published": "2026-11-28",
+    "summary": "Il grafico dello Storico ora si può ingrandire sull’asse del tempo per esaminare un giorno o un orario in dettaglio.",
+    "notes": [
+      "Usa i pulsanti + e −, il gesto a due dita su mobile o Ctrl/Cmd e rotella sul grafico. Il riquadro mantiene le stesse dimensioni.",
+      "A grafico ingrandito, spostati nel tempo con le frecce o muovi due dita insieme. Il pulsante di ripristino torna alla vista completa.",
+      "Lo zoom usa i dati già caricati. Toccando una banda puoi ancora vedere i suoi orari di inizio e fine."
+    ],
+    "file": "firmware/esp1-monet-v2.13.0.emu",
+    "size": 2562872,
+    "sha256": "58fc7a2c6f1d4962af7657750caedc34b91c5653ecabc36fad3c9e15244584ce"
+  },
+  "previous": {
     "version": "2.12.0",
     "published": "2026-11-28",
     "summary": "Lo Storico mostra gli orari delle bande del grafico e la barra dei tab occupa meno spazio durante lo scorrimento su mobile.",
@@ -13,19 +26,5 @@
     "file": "firmware/esp1-monet-v2.12.0.emu",
     "size": 2562872,
     "sha256": "cf6f5f3c2905693d2e627f43961528f2ded552b80b07566ab621500b9d204cc5"
-  },
-  "previous": {
-    "version": "2.11.3",
-    "published": "2026-11-27",
-    "summary": "Storico con intervalli a data e ora e scorciatoia «Oggi»; nella pagina Clima i setpoint Presente di ogni area vengono per primi. Comandi al termostato, API e firmware invariati; formato del pacchetto e partizioni invariati.",
-    "notes": [
-      "Nello Storico l'intervallo è un unico campo: toccandolo si scelgono data e ora di inizio e di fine, fino a 21 giorni.",
-      "Nuova scorciatoia «Oggi», dalla mezzanotte ad adesso, accanto a 24 ore, 7 giorni e Max.",
-      "Sugli intervalli brevi l'asse del tempo mostra tacche ogni 10, 15 o 30 minuti.",
-      "La sezione dei setpoint per area si chiama «Setpoint Presente · Riscaldamento» (o «Raffrescamento», secondo la stagione) ed è la prima della pagina Clima."
-    ],
-    "file": "firmware/esp1-monet-v2.11.3.emu",
-    "size": 2563176,
-    "sha256": "5779611b61ce743a3dbe44ece3ee143a26f7d2cee11a938c8cab2b2027c01302"
   }
 }
