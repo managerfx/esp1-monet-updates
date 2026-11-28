@@ -2,6 +2,19 @@
   "schema": 1,
   "device": "esp1-monet",
   "current": {
+    "version": "2.14.0",
+    "published": "2026-11-28",
+    "summary": "Lo Storico ha controlli di zoom più discreti e permette di spostarsi nel tempo trascinando la scala degli orari.",
+    "notes": [
+      "I tasti + e − rimangono dentro il riquadro del grafico con icone piccole e fondo trasparente.",
+      "Quando ingrandisci, vedi l’intervallo mostrato e puoi tornare al periodo selezionato con «Vista completa».",
+      "Trascina la scala degli orari per spostarti nel tempo durante lo zoom. Puoi usare anche le frecce della tastiera sulla scala."
+    ],
+    "file": "firmware/esp1-monet-v2.14.0.emu",
+    "size": 2562872,
+    "sha256": "1ba8fb3b663ab8fe3fde2eef4ed07414f698335917e547d19afd9b3c78012cf8"
+  },
+  "previous": {
     "version": "2.13.0",
     "published": "2026-11-28",
     "summary": "Il grafico dello Storico ora si può ingrandire sull’asse del tempo per esaminare un giorno o un orario in dettaglio.",
@@ -13,18 +26,5 @@
     "file": "firmware/esp1-monet-v2.13.0.emu",
     "size": 2562872,
     "sha256": "58fc7a2c6f1d4962af7657750caedc34b91c5653ecabc36fad3c9e15244584ce"
-  },
-  "previous": {
-    "version": "2.12.0",
-    "published": "2026-11-28",
-    "summary": "Lo Storico mostra gli orari delle bande del grafico e la barra dei tab occupa meno spazio durante lo scorrimento su mobile.",
-    "notes": [
-      "Tocca una banda attiva o inattiva per vedere data e ora di inizio e fine del segmento visibile.",
-      "Su mobile, tocca fuori dal grafico per chiudere il riquadro dei dettagli.",
-      "Scorrendo verso il basso, la barra dei tab si compatta e lascia visibili le icone. Quando risali, tornano anche le etichette."
-    ],
-    "file": "firmware/esp1-monet-v2.12.0.emu",
-    "size": 2562872,
-    "sha256": "cf6f5f3c2905693d2e627f43961528f2ded552b80b07566ab621500b9d204cc5"
   }
 }
